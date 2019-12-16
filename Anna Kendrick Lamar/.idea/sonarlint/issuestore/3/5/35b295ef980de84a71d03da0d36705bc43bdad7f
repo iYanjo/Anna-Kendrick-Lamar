@@ -1,0 +1,11 @@
+
+isquid:CommentedOutCodeLine4"<This block of commented-out lines of code should be removed.(ŒŒÊ÷8ê·¶æð-
+nsquid:CommentedOutCodeLine2"<This block of commented-out lines of code should be removed.(Íöðüüÿÿÿÿ8ê·¶æð-
+[
+squid:S106@"9Replace this use of System.out or System.err by a logger.(ÞžÒ—üÿÿÿÿ8ê·¶æð-
+Lsquid:S14810")Remove this unused "cell" local variable.(¶õ¶Ÿÿÿÿÿÿ8ê·¶æð-
+isquid:CommentedOutCodeLine7"<This block of commented-out lines of code should be removed.(ÒÑ•¢8ê·¶æð-
+nsquid:CommentedOutCodeLine>"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8ê·¶æð-
+nsquid:CommentedOutCodeLineD"<This block of commented-out lines of code should be removed.(ÇÂŽúÿÿÿÿ8ê·¶æð-
+¤squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ã­Üßøÿÿÿÿ8ê·¶æð-
+isquid:CommentedOutCodeLine:"<This block of commented-out lines of code should be removed.(™Þ’Ç8ê·¶æð-

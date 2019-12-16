@@ -11,14 +11,14 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("initial_page.fxml"));
-        Controller controller = new Controller();
-        fxmlLoader.setController(controller);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("initial_screen.fxml"));
+        N3zController n3zController = new N3zController();
+        fxmlLoader.setController(n3zController);
         Parent root = fxmlLoader.load();
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setTitle("asdf");
+        primaryStage.setScene(new Scene(root, 600, 600));
         primaryStage.show();
-        controller.setupUI(root);
+        n3zController.setupSigninScene(primaryStage, root);
     }
 
 

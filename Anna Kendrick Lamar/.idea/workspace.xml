@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ui/N3zController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/initial_screen.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/matchup_screen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/excel/ExcelHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/excel/ExcelHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/Controller$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/ReadErrorAlert.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/ReadErrorAlert.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/initial_page.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/excel/ExcelHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/excel/ExcelHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/initial_page.fxml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="41" />
+    <option name="myElementSize" value="31" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -58,6 +73,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -71,7 +87,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1V2Zn0q4AhTkSt1v4zMMA8YFkMg" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -217,6 +235,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="872" y="358" key="#Plugins/0.0.2560.1400@0.0.2560.1400" timestamp="1576469955116" />
+    <state x="912" y="100" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1576493132202">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="912" y="100" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1576493132202" />
     <state x="1034" y="415" key="DetectedRootsChooserDialog" timestamp="1576468438639">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -225,46 +247,46 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1576468636960" />
-    <state width="1257" height="399" key="GridCell.Tab.0.bottom" timestamp="1576470601979">
+    <state width="1255" height="399" key="GridCell.Tab.0.bottom" timestamp="1576493224559">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1257" height="399" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1576470601979" />
-    <state width="1257" height="399" key="GridCell.Tab.0.center" timestamp="1576470601979">
+    <state width="1255" height="399" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1576493224559" />
+    <state width="1255" height="399" key="GridCell.Tab.0.center" timestamp="1576493224559">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1257" height="399" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1576470601979" />
-    <state width="1257" height="399" key="GridCell.Tab.0.left" timestamp="1576470601979">
+    <state width="1255" height="399" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1576493224559" />
+    <state width="1255" height="399" key="GridCell.Tab.0.left" timestamp="1576493224559">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1257" height="399" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1576470601979" />
-    <state width="1257" height="399" key="GridCell.Tab.0.right" timestamp="1576470601979">
+    <state width="1255" height="399" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1576493224559" />
+    <state width="1255" height="399" key="GridCell.Tab.0.right" timestamp="1576493224559">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1257" height="399" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1576470601979" />
-    <state width="1836" height="492" key="GridCell.Tab.1.bottom" timestamp="1576469234260">
+    <state width="1255" height="399" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1576493224559" />
+    <state width="1828" height="499" key="GridCell.Tab.1.bottom" timestamp="1576492965534">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1836" height="492" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1576469234260" />
-    <state width="1836" height="492" key="GridCell.Tab.1.center" timestamp="1576469234260">
+    <state width="1828" height="499" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1576492965534" />
+    <state width="1828" height="499" key="GridCell.Tab.1.center" timestamp="1576492965533">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1836" height="492" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1576469234260" />
-    <state width="1836" height="492" key="GridCell.Tab.1.left" timestamp="1576469234260">
+    <state width="1828" height="499" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1576492965533" />
+    <state width="1828" height="499" key="GridCell.Tab.1.left" timestamp="1576492965533">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1836" height="492" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1576469234260" />
-    <state width="1836" height="492" key="GridCell.Tab.1.right" timestamp="1576469234260">
+    <state width="1828" height="499" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1576492965533" />
+    <state width="1828" height="499" key="GridCell.Tab.1.right" timestamp="1576492965534">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1836" height="492" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1576469234260" />
+    <state width="1828" height="499" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1576492965534" />
     <state x="760" y="274" key="SettingsEditor" timestamp="1576469457293">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="760" y="274" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1576469457293" />
-    <state x="976" y="523" key="com.intellij.ide.util.TipDialog" timestamp="1576455340551">
+    <state x="976" y="523" key="com.intellij.ide.util.TipDialog" timestamp="1576481748930">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="976" y="523" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1576455340551" />
+    <state x="976" y="523" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1576481748930" />
     <state x="663" y="320" key="new project wizard" timestamp="1576469933747">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -283,19 +305,52 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/excel/ExcelHelper.java</url>
-          <line>37</line>
+          <line>36</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/excel/ExcelHelper.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="7" />
+          <line>28</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/excel/ExcelHelper.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/excel/ExcelHelper.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ui/N3zController.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ui/N3zController.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ui/N3zController.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/ui/N3zController.java</url>
+          <line>28</line>
+          <properties class="ui.N3zController" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Anna_Kendrick_Lamar$Main.ic" NAME="Main Coverage Results" MODIFIED="1576470601958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Anna_Kendrick_Lamar$Main.ic" NAME="Main Coverage Results" MODIFIED="1576493224520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ui.*</FILTER>
     </SUITE>
   </component>

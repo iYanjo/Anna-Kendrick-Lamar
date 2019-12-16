@@ -1,5 +1,6 @@
 package excel;
 
+import com.sun.jndi.toolkit.url.UrlUtil;
 import data.Album;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
@@ -10,6 +11,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Iterator;
 
 public class ExcelHelper {
@@ -17,21 +19,18 @@ public class ExcelHelper {
     XSSFWorkbook workbook;
     XSSFSheet albums;
     XSSFSheet sorted;
-    XSSFSheet metadata;
 
     public ExcelHelper(){
     }
 
     public void getSpreadsheet(String path) throws IOException {
-        File myFile = new File(path);
-        FileInputStream fis = new FileInputStream(myFile);
-        // Finds the workbook instance for XLSX file
+        File spreadsheet = new File(".\\res\\Albums_2010s.xlsx");
+
+        FileInputStream fis = new FileInputStream(spreadsheet);
         try (XSSFWorkbook myWorkBook = new XSSFWorkbook(fis)) {
             workbook = myWorkBook;
-            // Return first sheet from the XLSX workbook
             albums = myWorkBook.getSheetAt(0);
             sorted = myWorkBook.getSheetAt(1);
-            metadata = myWorkBook.getSheetAt(2);
         }
 
         // Get iterator to all the rows in current sheet
