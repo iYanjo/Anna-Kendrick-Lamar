@@ -16,7 +16,7 @@ public class ExcelFileFilter extends FileFilter {
 
     //The description of this filter
     public String getDescription() {
-        return "Jorge's Album excel";
+        return "Your previous album excel";
     }
 
     private String getExtension(File f) {

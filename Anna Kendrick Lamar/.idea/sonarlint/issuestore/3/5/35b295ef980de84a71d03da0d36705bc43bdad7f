@@ -1,11 +1,25 @@
 
-isquid:CommentedOutCodeLine4"<This block of commented-out lines of code should be removed.(ŒŒÊ÷8ê·¶æð-
-nsquid:CommentedOutCodeLine2"<This block of commented-out lines of code should be removed.(Íöðüüÿÿÿÿ8ê·¶æð-
-[
-squid:S106@"9Replace this use of System.out or System.err by a logger.(ÞžÒ—üÿÿÿÿ8ê·¶æð-
-Lsquid:S14810")Remove this unused "cell" local variable.(¶õ¶Ÿÿÿÿÿÿ8ê·¶æð-
-isquid:CommentedOutCodeLine7"<This block of commented-out lines of code should be removed.(ÒÑ•¢8ê·¶æð-
-nsquid:CommentedOutCodeLine>"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8ê·¶æð-
-nsquid:CommentedOutCodeLineD"<This block of commented-out lines of code should be removed.(ÇÂŽúÿÿÿÿ8ê·¶æð-
-¤squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ã­Üßøÿÿÿÿ8ê·¶æð-
-isquid:CommentedOutCodeLine:"<This block of commented-out lines of code should be removed.(™Þ’Ç8ê·¶æð-
+isquid:CommentedOutCodeLinej"<This block of commented-out lines of code should be removed.(ø™˜ª8Öðçåù-
+Ysquid:S2696)"6Make the enclosing method "static" or remove this set.(ÝÍ°Óþÿÿÿÿ8ìòþäù-
+msquid:S2095I"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(˜„°Žÿÿÿÿÿ8Öðçåù-
+isquid:CommentedOutCodeLine^"<This block of commented-out lines of code should be removed.(Çµý‚8Öðçåù-
+Isquid:S1481S"&Remove this unused "i" local variable.(ô–ìÔüÿÿÿÿ8ú–¶æù-
+nsquid:CommentedOutCodeLineu"<This block of commented-out lines of code should be removed.(—Ñ²…ÿÿÿÿÿ8Öðçåù-
+csquid:S1854Q"@Remove this useless assignment to local variable "matchupsList".(â¼‹˜þÿÿÿÿ8ÚÎµæù-
+isquid:CommentedOutCodeLineb"<This block of commented-out lines of code should be removed.(š× Õ8Öðçåù-
+¤squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ã­Üßøÿÿÿÿ8ê·¶æð-
+Lsquid:S1481O".Remove this unused "headerRow" local variable.(žÝ÷Ò8Öðçåù-
+jsquid:HiddenFieldCheckI"<Rename "workbook" which hides the field declared at line 21.(˜„°Žÿÿÿÿÿ8Öðçåù-
+isquid:CommentedOutCodeLine%"<This block of commented-out lines of code should be removed.(°ú˜¦8´Îƒæù-
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¸°€›8Öðçåù-
+osquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÇÂŽúÿÿÿÿ8Öðçåù-
+nsquid:CommentedOutCodeLineW"<This block of commented-out lines of code should be removed.(—Ñ²…ÿÿÿÿÿ8Öðçåù-
+Isquid:S1172"+Remove this unused method parameter "path".(›ÈÕè8«Ùïð-
+isquid:CommentedOutCodeLineq"<This block of commented-out lines of code should be removed.(º°Ñ˜8Öðçåù-
+isquid:CommentedOutCodeLinel"<This block of commented-out lines of code should be removed.(·Û‡ð8Öðçåù-
+Tsquid:S1481Q"1Remove this unused "matchupsList" local variable.(â¼‹˜þÿÿÿÿ8ÚÎµæù-
+nsquid:CommentedOutCodeLineg"<This block of commented-out lines of code should be removed.(‹Ù¼‰ýÿÿÿÿ8Öðçåù-
+nsquid:CommentedOutCodeLinez"<This block of commented-out lines of code should be removed.(‚Ìï«ÿÿÿÿÿ8Öðçåù-
+Xsquid:S1854S"5Remove this useless assignment to local variable "i".(ô–ìÔüÿÿÿÿ8ú–¶æù-
+[squid:S1854O"=Remove this useless assignment to local variable "headerRow".(žÝ÷Ò8Öðçåù-
+¤%squid:RedundantThrowsDeclarationCheckC"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(êú¿æ8Ï¼æù-

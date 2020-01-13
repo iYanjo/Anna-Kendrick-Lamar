@@ -1,30 +1,12 @@
 
-}squid:S4165"fRemove this useless assignment; "rymScore" already holds the assigned value along all execution paths.(·—»Õ
-ˆsquid:S4165"qRemove this useless assignment; "representativeTrack" already holds the assigned value along all execution paths.(Á‘’
-?squid:S1068"(Remove this unused "name" private field.(Ë¥¼
-Ksquid:S1068"/Remove this unused "adjRymScore" private field.(úğÈôûÿÿÿÿ
-ƒsquid:S4165"lRemove this useless assignment; "aggregateScore" already holds the assigned value along all execution paths.(×Ü‰
-Ysquid:S00107"AConstructor has 9 parameters, which is greater than 7 authorized.(…Õâ¶
-Fsquid:S1656"/Remove or correct this useless self-assignment.(Á‘’
-Hsquid:S1068",Remove this unused "rymScore" private field.(«’Ø³üÿÿÿÿ
-Ksquid:S1656"/Remove or correct this useless self-assignment.( Š­¿øÿÿÿÿ
-Nsquid:S1068"7Remove this unused "representativeTrack" private field.(”‚¶°
-†squid:S4165"jRemove this useless assignment; "fantanoScore" already holds the assigned value along all execution paths.( Š­¿øÿÿÿÿ
-Fsquid:S1656"/Remove or correct this useless self-assignment.(¦äµÿ
-Fsquid:S1656"/Remove or correct this useless self-assignment.(Õ‡Ì¢
-Hsquid:S1068	",Remove this unused "p4kScore" private field.(ã²Äëşÿÿÿÿ
-Fsquid:S1068"*Remove this unused "artist" private field.(†ğÖŠıÿÿÿÿ
-Nsquid:S1068"2Remove this unused "aggregateScore" private field.(¦¶²‘øÿÿÿÿ
-Fsquid:S1656"/Remove or correct this useless self-assignment.(·—»Õ
-{squid:S4165"dRemove this useless assignment; "artist" already holds the assigned value along all execution paths.(Ãêœò
-Fsquid:S1656"/Remove or correct this useless self-assignment.(×Ü‰
-Ksquid:S1656"/Remove or correct this useless self-assignment.(× úùÿÿÿÿ
-Fsquid:S1068
-"0Remove this unused "fantanoScore" private field.(Çşü
-}squid:S4165"fRemove this useless assignment; "p4kScore" already holds the assigned value along all execution paths.(Õ‡Ì¢
-ysquid:S4165"bRemove this useless assignment; "year" already holds the assigned value along all execution paths.(İÃ±¬
-Fsquid:S1656"/Remove or correct this useless self-assignment.(Ãêœò
-Fsquid:S1656"/Remove or correct this useless self-assignment.(İÃ±¬
-ysquid:S4165"bRemove this useless assignment; "name" already holds the assigned value along all execution paths.(¦äµÿ
-…squid:S4165"iRemove this useless assignment; "adjRymScore" already holds the assigned value along all execution paths.(× úùÿÿÿÿ
-?squid:S1068"(Remove this unused "year" private field.(¡‚ºğ
+Osquid:S1068	",Remove this unused "p4kScore" private field.(æÜâ·ÿÿÿÿÿ8üŠùåù-
+Jsquid:S1068",Remove this unused "rymScore" private field.(®è©ì8üŠùåù-
+Nsquid:S1068
+"0Remove this unused "fantanoScore" private field.(í§½Ç8üŠùåù-
+Ysquid:S00107"AConstructor has 9 parameters, which is greater than 7 authorized.(¼½ù»
+Fsquid:S1068"(Remove this unused "name" private field.(Ë¥¼8üŠùåù-
+Rsquid:S1068"/Remove this unused "adjRymScore" private field.(”Ü¾õùÿÿÿÿ8üŠùåù-
+Usquid:S1068"7Remove this unused "representativeTrack" private field.(”‚¶°8üŠùåù-
+Msquid:S1068"*Remove this unused "artist" private field.(†ğÖŠıÿÿÿÿ8üŠùåù-
+Psquid:S1068"2Remove this unused "aggregateScore" private field.(ô¯‚8üŠùåù-
+Fsquid:S1068"(Remove this unused "year" private field.(¡‚ºğ8üŠùåù-

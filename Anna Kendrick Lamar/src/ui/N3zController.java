@@ -1,6 +1,5 @@
 package ui;
 
-import com.sun.corba.se.impl.resolver.SplitLocalResolverImpl;
 import excel.ExcelHelper;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -37,6 +36,8 @@ public class N3zController {
             @Override
             public void handle(ActionEvent event) {
                 //create xslx. store data in active memory (probably?) and display if needed.
+                loadAlbumsSpreadsheet();
+                createMatchupsSpreadsheet();
                 setupMatchupScreen();
             }
         });
@@ -45,6 +46,7 @@ public class N3zController {
         nthTimeButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                loadAlbumsSpreadsheet();
                 FileChooser fileChooser = new FileChooser();
                 fileChooser.getExtensionFilters().addAll(
                         new FileChooser.ExtensionFilter("Choose the Excel from before", "*.xlsx"));
@@ -71,9 +73,19 @@ public class N3zController {
         mPrimaryStage.setScene(new Scene(root, 600, 600));
     }
 
-    private void loadSpreadsheet() {
+    private void loadAlbumsSpreadsheet() {
         try {
-            excelHelper.getSpreadsheet("res/Albums2010s.xlsx");
+            excelHelper.getAlbumsSpreadsheet("res/Albums2010s.xlsx");
+        } catch (IOException e) {
+            e.printStackTrace();
+            ReadErrorAlert readErrorAlert = new ReadErrorAlert();
+            readErrorAlert.display(e);
+        }
+    }
+
+    private void createMatchupsSpreadsheet() {
+        try {
+            excelHelper.createResultsSpreadsheet("asdf");
         } catch (IOException e) {
             e.printStackTrace();
             ReadErrorAlert readErrorAlert = new ReadErrorAlert();
