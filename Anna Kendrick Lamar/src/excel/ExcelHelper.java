@@ -30,8 +30,12 @@ public class ExcelHelper {
     public ExcelHelper(){
     }
 
-    public void getAlbumsSpreadsheet(String path) throws IOException {
-        File spreadsheet = new File(".\\res\\Albums_2010s.xlsx");
+    public boolean isAlbumsFetched() {
+        return albums != null;
+    }
+
+    public void getAlbumsSpreadsheet() throws IOException {
+        File spreadsheet = new File(".\\src\\res\\Albums_2010s.xlsx");
 
         FileInputStream fis = new FileInputStream(spreadsheet);
         try (XSSFWorkbook myWorkBook = new XSSFWorkbook(fis)) {
@@ -70,9 +74,10 @@ public class ExcelHelper {
         return cell.getCellType().equals(STRING) ? cell.getStringCellValue() : Double.toString(cell.getNumericCellValue());
     }
 
-    public void createResultsSpreadsheet(String name) throws IOException {
+    // return true if created successfully
+    public boolean createResultsSpreadsheet(String name) throws IOException {
         if(albums == null) {
-            return;
+            return false;
         }
 
         matchupsList = createMatchupsList(name.hashCode());
@@ -121,6 +126,9 @@ public class ExcelHelper {
                     new FileChooser.ExtensionFilter("Excel Sheet", "*.xlsx"));
 
             File saveDir = fileChooser.showSaveDialog(null);
+            if(saveDir == null) {
+                return false;
+            }
             // todo: catch error if saveDir is null
             FileOutputStream fos = new FileOutputStream(saveDir);
             workbook.write(fos);
@@ -131,6 +139,7 @@ public class ExcelHelper {
             e.printStackTrace();
         }
         workbook.close();
+        return true;
     }
 
     private List<Pair<Integer, Integer>> createMatchupsList(long seed) {

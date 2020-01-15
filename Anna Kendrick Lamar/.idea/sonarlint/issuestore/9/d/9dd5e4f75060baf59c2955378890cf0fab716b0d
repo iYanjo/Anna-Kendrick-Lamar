@@ -1,12 +1,2 @@
 
-Osquid:S1068	",Remove this unused "p4kScore" private field.(æÜâ·ÿÿÿÿÿ8üŠùåù-
-Jsquid:S1068",Remove this unused "rymScore" private field.(®è©ì8üŠùåù-
-Nsquid:S1068
-"0Remove this unused "fantanoScore" private field.(í§½Ç8üŠùåù-
 Ysquid:S00107"AConstructor has 9 parameters, which is greater than 7 authorized.(¼½ù»
-Fsquid:S1068"(Remove this unused "name" private field.(Ë¥¼8üŠùåù-
-Rsquid:S1068"/Remove this unused "adjRymScore" private field.(”Ü¾õùÿÿÿÿ8üŠùåù-
-Usquid:S1068"7Remove this unused "representativeTrack" private field.(”‚¶°8üŠùåù-
-Msquid:S1068"*Remove this unused "artist" private field.(†ğÖŠıÿÿÿÿ8üŠùåù-
-Psquid:S1068"2Remove this unused "aggregateScore" private field.(ô¯‚8üŠùåù-
-Fsquid:S1068"(Remove this unused "year" private field.(¡‚ºğ8üŠùåù-

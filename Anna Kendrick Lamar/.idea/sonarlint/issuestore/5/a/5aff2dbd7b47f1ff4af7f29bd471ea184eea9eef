@@ -1,9 +1,11 @@
 
-squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¡¯İøÿÿÿÿ
-?squid:S1604#"(Make this anonymous inner class a lambda(›Ò¦ô
-Fsquid:S1148P"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‘Æòğ-
-Fsquid:S1604."(Make this anonymous inner class a lambda(ÂÄñõ8Âõ–òğ-
-Fsquid:S1148Z"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¸Á¹æù-
-zsquid:S1450"\Remove the "nthTimeButton" field and declare it as a local variable in the relevant methods.(Ãÿ•8ß¤—òğ-
-|squid:S1450"^Remove the "firstTimeButton" field and declare it as a local variable in the relevant methods.(„ì‘—8êÙñğ-
-Fsquid:S1148F"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‘Æòğ-
+Ssquid:S1191"5Use classes from the Java API instead of Sun classes.(±§¡ñ8³Î¹Áú-
+wsquid:S3012R"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(‚«‹8Òõ‡Áú-
+zsquid:S1450"\Remove the "nthTimeButton" field and declare it as a local variable in the relevant methods.(Ãÿ•8ß¤—òğ-
+Fsquid:S1604>"(Make this anonymous inner class a lambda(ÂÄñõ8Âõ–òğ-
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¡¯İøÿÿÿÿ
+Fsquid:S1148m"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¸Á¹æù-
+Fsquid:S1148b"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‘Æòğ-
+Fsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¥ßÕÂú-
+|squid:S1450"^Remove the "firstTimeButton" field and declare it as a local variable in the relevant methods.(„ì‘—8êÙñğ-
+?squid:S1604%"(Make this anonymous inner class a lambda(›Ò¦ô

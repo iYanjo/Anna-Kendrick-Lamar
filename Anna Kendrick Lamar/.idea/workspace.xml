@@ -2,22 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/1/21055c088e77ffa33a7594e62831d3dab60544b6" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/album_matchup_display.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/album_score_text.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/album_text.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/5/35b295ef980de84a71d03da0d36705bc43bdad7f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/5/35b295ef980de84a71d03da0d36705bc43bdad7f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7bcbab103227d595a34f8837db42671fb4a97c89" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/a/5aff2dbd7b47f1ff4af7f29bd471ea184eea9eef" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/a/5aff2dbd7b47f1ff4af7f29bd471ea184eea9eef" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/d/9dd5e4f75060baf59c2955378890cf0fab716b0d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/d/9dd5e4f75060baf59c2955378890cf0fab716b0d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/data/Album.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/data/Album.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/excel/ExcelFileFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/excel/ExcelFileFilter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/excel/ExcelHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/excel/ExcelHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/InitialScene.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/N3zController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/N3zController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/N3zController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/N3zController$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/N3zController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/N3zController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Album.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/excel/ExcelFileFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/excel/ExcelFileFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/matchup_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/matchup_screen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Albums_2010s.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/Albums_2010s.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/anna  bae 2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/anna bae 2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/anna bae 1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/anna bae 1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/anna bae 3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/anna bae 3.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/excel/ExcelHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/excel/ExcelHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/InitialScene.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/N3zController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/N3zController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/matchup_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/matchup_screen.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,13 +122,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="C:/Program Files/Java/poi-4.1.1/lib/commons-compress-1.19.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jyan1_000\Documents\GitHub\Anna-Kendrick-Lamar\Anna Kendrick Lamar\src" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -253,50 +265,50 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1034" y="415" key="DetectedRootsChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1576468438639" />
-    <state x="1060" y="454" key="FileChooserDialogImpl" timestamp="1576468636960">
+    <state x="1060" y="454" key="FileChooserDialogImpl" timestamp="1579078034757">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1576468636960" />
-    <state width="1265" height="399" key="GridCell.Tab.0.bottom" timestamp="1578903555165">
+    <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1579078034757" />
+    <state width="1811" height="499" key="GridCell.Tab.0.bottom" timestamp="1579080474253">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1265" height="399" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1578903555165" />
-    <state width="1265" height="399" key="GridCell.Tab.0.center" timestamp="1578903555164">
+    <state width="1811" height="499" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1579080474253" />
+    <state width="1811" height="499" key="GridCell.Tab.0.center" timestamp="1579080474253">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1265" height="399" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1578903555164" />
-    <state width="1265" height="399" key="GridCell.Tab.0.left" timestamp="1578903555164">
+    <state width="1811" height="499" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1579080474253" />
+    <state width="1811" height="499" key="GridCell.Tab.0.left" timestamp="1579080474253">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1265" height="399" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1578903555164" />
-    <state width="1265" height="399" key="GridCell.Tab.0.right" timestamp="1578903555164">
+    <state width="1811" height="499" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1579080474253" />
+    <state width="1811" height="499" key="GridCell.Tab.0.right" timestamp="1579080474253">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1265" height="399" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1578903555164" />
-    <state width="1815" height="499" key="GridCell.Tab.1.bottom" timestamp="1578903488124">
+    <state width="1811" height="499" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1579080474253" />
+    <state width="1811" height="499" key="GridCell.Tab.1.bottom" timestamp="1579080474254">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1815" height="499" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1578903488124" />
-    <state width="1815" height="499" key="GridCell.Tab.1.center" timestamp="1578903488124">
+    <state width="1811" height="499" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1579080474254" />
+    <state width="1811" height="499" key="GridCell.Tab.1.center" timestamp="1579080474253">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1815" height="499" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1578903488124" />
-    <state width="1815" height="499" key="GridCell.Tab.1.left" timestamp="1578903488124">
+    <state width="1811" height="499" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1579080474253" />
+    <state width="1811" height="499" key="GridCell.Tab.1.left" timestamp="1579080474253">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1815" height="499" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1578903488124" />
-    <state width="1815" height="499" key="GridCell.Tab.1.right" timestamp="1578903488124">
+    <state width="1811" height="499" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1579080474253" />
+    <state width="1811" height="499" key="GridCell.Tab.1.right" timestamp="1579080474254">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1815" height="499" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1578903488124" />
+    <state width="1811" height="499" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1579080474254" />
     <state x="760" y="274" key="SettingsEditor" timestamp="1576469457293">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="760" y="274" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1576469457293" />
-    <state x="976" y="523" key="com.intellij.ide.util.TipDialog" timestamp="1578898357320">
+    <state x="976" y="523" key="com.intellij.ide.util.TipDialog" timestamp="1579073100279">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="976" y="523" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1578898357320" />
+    <state x="976" y="523" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1579073100279" />
     <state x="984" y="593" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1578882007570">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -313,23 +325,23 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="921" y="426" width="700" height="530" key="recent.locations.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1576469111963" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1578881217562">
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1579080067324">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1578881217562" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1579080067324" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ui/N3zController.java</url>
-          <line>31</line>
+          <line>32</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/excel/ExcelHelper.java</url>
-          <line>132</line>
-          <option name="timeStamp" value="38" />
+          <url>file://$PROJECT_DIR$/src/ui/N3zController.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

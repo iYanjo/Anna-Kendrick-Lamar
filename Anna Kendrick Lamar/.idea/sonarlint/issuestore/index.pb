@@ -17,3 +17,9 @@ J
 src/ui/matchup_screen.fxml,2\e\2e4eeec99390cddadaf62e49af7144e355534ca7
 I
 src/ui/N3zController.java,5\a\5aff2dbd7b47f1ff4af7f29bd471ea184eea9eef
+F
+src/ui/album_text.fxml,6\f\6f7c23b4dddad515df7fa6c20b2b1caadf00493e
+L
+src/ui/album_score_text.fxml,6\d\6dc861ae40cd9e503e4b523682521ec334ffedc9
+Q
+!src/ui/album_matchup_display.fxml,8\a\8a46f3fa777671175384cffbfcba1d892ed01f7a

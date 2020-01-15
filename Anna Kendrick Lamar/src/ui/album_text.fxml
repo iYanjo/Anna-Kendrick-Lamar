@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<Text id="album_text" text="Album Info: " textAlignment="LEFT">
+    <VBox.margin>
+        <Insets bottom="6.0" top="6.0" />
+    </VBox.margin>
+    <font>
+        <Font size="16.0" />
+    </font>
+</Text>

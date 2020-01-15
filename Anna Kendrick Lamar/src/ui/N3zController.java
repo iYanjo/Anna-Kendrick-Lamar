@@ -1,19 +1,20 @@
 package ui;
 
+import com.sun.istack.internal.Nullable;
 import excel.ExcelHelper;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import org.apache.commons.codec.digest.DigestUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
 
 public class N3zController {
 
@@ -23,22 +24,37 @@ public class N3zController {
     private TextField nameTextField;
 
     private ExcelHelper excelHelper = new ExcelHelper();
-    private String name;
-    private String hash;
 
     public N3zController() {
     }
 
+    private static final char[] ILLEGAL_FILENAME_CHARACTERS = { '/', '\n', '\r', '\t', '\0', '\f', '`', '?', '*', '\\', '<', '>', '|', '\"', ':' };
+
     public void setupSigninScene(final Stage primaryStage, Parent root) {
         mPrimaryStage = primaryStage;
+        nameTextField = (TextField) root.lookup("#nameTextField");
         firstTimeButton = (Button) root.lookup("#firstTimeButton");
         firstTimeButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                //create xslx. store data in active memory (probably?) and display if needed.
-                loadAlbumsSpreadsheet();
-                createMatchupsSpreadsheet();
-                setupMatchupScreen();
+                if(getName().isEmpty()) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Invalid Name");
+                    alert.setHeaderText("Can't have empty name");
+                    alert.setContentText("Please enter a non-empty name without invalid characters for files");
+                    alert.showAndWait();
+                } else if (doesStringContainInvalidFilenameCharacters(getName())){
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Invalid Name");
+                    alert.setHeaderText("Can't have invalid characters for your name");
+                    alert.setContentText("Please enter a non-empty name without invalid characters (?, *, `, /, etc)");
+                    alert.showAndWait();
+                } else {
+                    loadAlbumsSpreadsheet();
+                    if(createMatchupsSpreadsheet(getName())) {
+                        setupMatchupScreen();
+                    }
+                }
             }
         });
 
@@ -60,6 +76,47 @@ public class N3zController {
 
     }
 
+    private boolean doesStringContainInvalidFilenameCharacters(String s) {
+        Set<Character> illegalCharacterSet = new HashSet<>();
+        for(char c : ILLEGAL_FILENAME_CHARACTERS) {
+            illegalCharacterSet.add(c);
+        }
+        for(int i = 0; i < s.length(); i++) {
+            if(illegalCharacterSet.contains(s.charAt(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void loadAlbumsSpreadsheet() {
+        try {
+            if(!excelHelper.isAlbumsFetched()) {
+                excelHelper.getAlbumsSpreadsheet();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            ReadErrorAlert readErrorAlert = new ReadErrorAlert();
+            readErrorAlert.display(e);
+        }
+    }
+
+    // return true if created successfully
+    private boolean createMatchupsSpreadsheet(String name) {
+        try {
+            return excelHelper.createResultsSpreadsheet(name);
+        } catch (IOException e) {
+            e.printStackTrace();
+            ReadErrorAlert readErrorAlert = new ReadErrorAlert();
+            readErrorAlert.display(e);
+            return false;
+        }
+    }
+
+    public @Nullable String getName() {
+        return nameTextField.getText();
+    }
+
     public void setupMatchupScreen() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("matchup_screen.fxml"));
         fxmlLoader.setController(this);
@@ -70,40 +127,6 @@ public class N3zController {
             e.printStackTrace();
         }
 
-        mPrimaryStage.setScene(new Scene(root, 600, 600));
-    }
-
-    private void loadAlbumsSpreadsheet() {
-        try {
-            excelHelper.getAlbumsSpreadsheet("res/Albums2010s.xlsx");
-        } catch (IOException e) {
-            e.printStackTrace();
-            ReadErrorAlert readErrorAlert = new ReadErrorAlert();
-            readErrorAlert.display(e);
-        }
-    }
-
-    private void createMatchupsSpreadsheet() {
-        try {
-            excelHelper.createResultsSpreadsheet("asdf");
-        } catch (IOException e) {
-            e.printStackTrace();
-            ReadErrorAlert readErrorAlert = new ReadErrorAlert();
-            readErrorAlert.display(e);
-        }
-    }
-
-    public String getName() {
-        if(name == null) {
-            name = nameTextField.toString();
-        }
-        return name;
-    }
-
-    public String getHash() {
-        if(hash == null) {
-            hash = DigestUtils.sha256Hex(getName());
-        }
-        return hash;
+        mPrimaryStage.setScene(new Scene(root, 1000, 1000));
     }
 }
