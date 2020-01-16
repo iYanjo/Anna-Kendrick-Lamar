@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<VBox alignment="CENTER" prefWidth="45" HBox.hgrow="SOMETIMES">
+    <children>
+        <Text id="score_type" text="score" textAlignment="CENTER" />
+        <Text id="score_value" text="10.0" textAlignment="CENTER">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+    </children>
+</VBox>
+

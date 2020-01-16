@@ -1,0 +1,8 @@
+
+Rsquid:S1068"4Remove this unused "leftAlbumDisplay" private field.(ÅŒÆ8ã´‡çú-
+Vsquid:S1172"3Remove this unused method parameter "primaryStage".(ñÅ›±øÿÿÿÿ8…¥Œçú-
+Xsquid:S1068"5Remove this unused "rightAlbumDisplay" private field.(À–¤Òıÿÿÿÿ8³í‡çú-
+Tsquid:S1068
+"1Remove this unused "mPrimaryStage" private field.(Ãñ½Ìûÿÿÿÿ8˜Šçú-
+hsquid:UselessImportCheck"8Remove this unused import 'javafx.scene.control.Button'.(Ë Í‹øÿÿÿÿ8åÊ‡çú-
+Zsquid:S1068"<Remove this unused "ALBUM_ARTWORK_EXTENSIONS" private field.(Ã§á•8”ÎŠçú-

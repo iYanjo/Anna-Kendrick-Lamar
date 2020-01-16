@@ -3,8 +3,6 @@ N
 src/excel/ExcelFileFilter.java,0\f\0faa034c09328c63f6ca2eb9014f59058105d531
 J
 src/excel/ExcelHelper.java,3\5\35b295ef980de84a71d03da0d36705bc43bdad7f
-H
-src/ui/InitialScene.java,5\1\517f0eef4c49d745f7b8d186f79f96bd23b70d73
 C
 src/data/Album.java,9\d\9dd5e4f75060baf59c2955378890cf0fab716b0d
 J
@@ -23,3 +21,7 @@ L
 src/ui/album_score_text.fxml,6\d\6dc861ae40cd9e503e4b523682521ec334ffedc9
 Q
 !src/ui/album_matchup_display.fxml,8\a\8a46f3fa777671175384cffbfcba1d892ed01f7a
+S
+#src/ui/MatchupScreenController.java,5\e\5eb03b9891c89cdc08f1cf8481697423935a5dff
+R
+"src/ui/SigninScreenController.java,d\5\d5d9892d6c14c0458b0bb2aad05718cc57de9002

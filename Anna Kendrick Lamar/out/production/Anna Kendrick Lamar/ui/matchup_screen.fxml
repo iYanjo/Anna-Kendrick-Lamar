@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.image.ImageView?>
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane prefHeight="80.0" prefWidth="1000.0" style="-fx-background-color: #000000;" VBox.vgrow="NEVER" />
-      <Pane prefHeight="400.0" prefWidth="1000.0" style="-fx-background-color: #f0f0f0;" VBox.vgrow="ALWAYS" />
+      <HBox prefHeight="700.0" prefWidth="1000.0" VBox.vgrow="ALWAYS">
+         <children>
+            <fx:include fx:id="leftAlbumDisplay" source="album_matchup_display.fxml"/>
+            <fx:include fx:id="rightAlbumDisplay" source="album_matchup_display.fxml"/>
+         </children>
+      </HBox>
       <Pane prefHeight="100.0" prefWidth="1000.0" style="-fx-background-color: #eaeaea;" VBox.vgrow="SOMETIMES" />
       <Pane prefHeight="80.0" prefWidth="1000.0" style="-fx-background-color: #aeaeae;" VBox.vgrow="NEVER" />
    </children>
