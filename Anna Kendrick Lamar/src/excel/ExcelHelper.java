@@ -1,9 +1,8 @@
 package excel;
 
 import data.Album;
+import data.Matchup;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
-import javafx.util.Pair;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -25,7 +24,8 @@ public class ExcelHelper {
     XSSFSheet albumsSheet;
     XSSFSheet sorted;
     Album[] albums;
-    List<Pair<Integer, Integer>> matchupsList;
+    List<Matchup> matchupsList;
+    private static int nextMatchupIndex;
 
     public ExcelHelper(){
     }
@@ -41,7 +41,7 @@ public class ExcelHelper {
         try (XSSFWorkbook myWorkBook = new XSSFWorkbook(fis)) {
             workbook = myWorkBook;
             albumsSheet = myWorkBook.getSheetAt(0);
-            //unused
+            //unused "sorted" sheet
 //            sorted = myWorkBook.getSheetAt(1);
         }
 
@@ -63,6 +63,38 @@ public class ExcelHelper {
                     getScoreFromAlbumCellSafe(row.getCell(6)),
                     getScoreFromAlbumCellSafe(row.getCell(7)),
                     row.getCell(8).getStringCellValue());
+        }
+
+        outputAlbumPicNames();
+    }
+
+    // run once to get names, not for final app
+    private void outputAlbumPicNames() {
+        String dirPath = ".\\src\\res\\Album Artwork\\";
+        System.out.println("here we are");
+
+
+        for(Album album : albums) {
+            String name = dirPath + album.getName();
+            File file = new File(name + ".jpg");
+            if(file.isFile()) {
+                System.out.println("\"" + album.getName() + ".jpg" + "\",");
+                continue;
+            }
+
+            file = new File(name + ".png");
+            if(file.isFile()) {
+                System.out.println("\"" + album.getName() + ".png" + "\",");
+                continue;
+            }
+
+            file = new File(name + ".jpeg");
+            if(file.isFile()) {
+                System.out.println("\"" + album.getName() + ".jpeg" + "\",");
+                continue;
+            }
+
+            System.out.println("\"problem with " + album.getName() + "\",");
         }
     }
 
@@ -95,20 +127,19 @@ public class ExcelHelper {
         Row headerRow = sheet.createRow(0);
         headerRow.setRowStyle(headerCellStyle);
         headerRow.createCell(0).setCellValue("Album 1 #");
-        headerRow.createCell(1).setCellValue("Album 1 Name + Track");
+        headerRow.createCell(1).setCellValue("Album 1 Name + Artist");
         headerRow.createCell(2).setCellValue("Album 2 #");
-        headerRow.createCell(3).setCellValue("Album 2 Name + Track");
-        headerRow.createCell(4).setCellValue("Result (-1 is skip)");
+        headerRow.createCell(3).setCellValue("Album 2 Name + Artist");
+        headerRow.createCell(4).setCellValue("Result (-1 is empty, -2 is skip)");
 
         int NUM_HEADER_ROWS_IN_MATCHUPS = 1;
         for(int i = 0; i < matchupsList.size(); i++) {
             Row row = sheet.createRow(i + NUM_HEADER_ROWS_IN_MATCHUPS);
-            int album1 = matchupsList.get(i).getKey();
-            int album2 = matchupsList.get(i).getValue();
-            row.createCell(0).setCellValue(album1);
-            row.createCell(1).setCellValue(albums[album1].getName() + ", " + albums[album1].getArtist());
-            row.createCell(2).setCellValue(album2);
-            row.createCell(3).setCellValue(albums[album2].getName() + ", " + albums[album2].getArtist());
+            Matchup matchup = matchupsList.get(i);
+            row.createCell(0).setCellValue(matchup.getAlbum1());
+            row.createCell(1).setCellValue(matchup.getAlbum1String());
+            row.createCell(2).setCellValue(matchup.getAlbum2());
+            row.createCell(3).setCellValue(matchup.getAlbum2String());
             row.createCell(4);
         }
         // Resize all columns to fit the content size
@@ -139,20 +170,29 @@ public class ExcelHelper {
             e.printStackTrace();
         }
         workbook.close();
+        nextMatchupIndex = 0;
         return true;
     }
 
-    private List<Pair<Integer, Integer>> createMatchupsList(long seed) {
-        List<Pair<Integer, Integer>> list = new ArrayList<>((albumCount * (albumCount-1))/2);
+    private List<Matchup> createMatchupsList(long seed) {
+        List<Matchup> list = new ArrayList<>((albumCount * (albumCount-1))/2);
         int i = 0;
         while(i < albumCount) {
             for(int j = i+1; j < albumCount; j++) {
-                list.add(new Pair<>(i, j));
+                list.add(new Matchup(i, albums[i].getName() + ", " + albums[i].getArtist(), j, albums[j].getName() + ", " + albums[j].getArtist()));
             }
             i++;
         }
 
         Collections.shuffle(list, new Random(seed));
         return list;
+    }
+
+    public Matchup getNextMatchup() {
+        return matchupsList.get(nextMatchupIndex++);
+    }
+
+    public Album getAlbum(int index) {
+        return albums[index];
     }
 }

@@ -1,6 +1,7 @@
 package ui;
 
 import com.sun.istack.internal.Nullable;
+import data.AlbumArtworkMap;
 import excel.ExcelHelper;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -8,11 +9,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -71,9 +75,9 @@ public class SigninScreenController {
                 if(spreadsheetFile != null) {
                     setupMatchupScreen();
                 }
+                //todo: make getMatchupsSpreadsheet instead of createMatchupsSpreadsheet. set nextMatchupIndex to right #
             }
         });
-
     }
 
     private boolean doesStringContainInvalidFilenameCharacters(String s) {
@@ -128,6 +132,6 @@ public class SigninScreenController {
         }
 
         mPrimaryStage.setScene(new Scene(root, 1000, 1000));
-        new MatchupScreenController(mPrimaryStage, root);
+        new MatchupScreenController(mPrimaryStage, root, excelHelper);
     }
 }
