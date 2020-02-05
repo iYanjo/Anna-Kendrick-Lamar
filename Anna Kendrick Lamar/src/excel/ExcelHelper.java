@@ -1,7 +1,9 @@
 package excel;
 
 import data.Album;
+import data.AlbumArtworkMap;
 import data.Matchup;
+import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -11,6 +13,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.*;
 
 import static org.apache.poi.ss.usermodel.CellType.NUMERIC;
@@ -20,9 +23,10 @@ public class ExcelHelper {
 
     private static int albumCount;
 
-    XSSFWorkbook workbook;
+    XSSFWorkbook albumsWorkbook;
     XSSFSheet albumsSheet;
     XSSFSheet sorted;
+    Sheet resultsSheet;
     Album[] albums;
     List<Matchup> matchupsList;
     private static int nextMatchupIndex;
@@ -39,7 +43,7 @@ public class ExcelHelper {
 
         FileInputStream fis = new FileInputStream(spreadsheet);
         try (XSSFWorkbook myWorkBook = new XSSFWorkbook(fis)) {
-            workbook = myWorkBook;
+            albumsWorkbook = myWorkBook;
             albumsSheet = myWorkBook.getSheetAt(0);
             //unused "sorted" sheet
 //            sorted = myWorkBook.getSheetAt(1);
@@ -64,38 +68,6 @@ public class ExcelHelper {
                     getScoreFromAlbumCellSafe(row.getCell(7)),
                     row.getCell(8).getStringCellValue());
         }
-
-        outputAlbumPicNames();
-    }
-
-    // run once to get names, not for final app
-    private void outputAlbumPicNames() {
-        String dirPath = ".\\src\\res\\Album Artwork\\";
-        System.out.println("here we are");
-
-
-        for(Album album : albums) {
-            String name = dirPath + album.getName();
-            File file = new File(name + ".jpg");
-            if(file.isFile()) {
-                System.out.println("\"" + album.getName() + ".jpg" + "\",");
-                continue;
-            }
-
-            file = new File(name + ".png");
-            if(file.isFile()) {
-                System.out.println("\"" + album.getName() + ".png" + "\",");
-                continue;
-            }
-
-            file = new File(name + ".jpeg");
-            if(file.isFile()) {
-                System.out.println("\"" + album.getName() + ".jpeg" + "\",");
-                continue;
-            }
-
-            System.out.println("\"problem with " + album.getName() + "\",");
-        }
     }
 
     private String getStringFromAlbumCellSafe(Cell cell) {
@@ -115,7 +87,7 @@ public class ExcelHelper {
         matchupsList = createMatchupsList(name.hashCode());
 
         Workbook workbook = new XSSFWorkbook();
-        Sheet sheet = workbook.createSheet(name + "_albums_results");
+        resultsSheet = workbook.createSheet(name + "_albums_results");
 
         //header
         Font headerFont = workbook.createFont();
@@ -124,7 +96,7 @@ public class ExcelHelper {
         CellStyle headerCellStyle = workbook.createCellStyle();
         headerCellStyle.setFont(headerFont);
 
-        Row headerRow = sheet.createRow(0);
+        Row headerRow = resultsSheet.createRow(0);
         headerRow.setRowStyle(headerCellStyle);
         headerRow.createCell(0).setCellValue("Album 1 #");
         headerRow.createCell(1).setCellValue("Album 1 Name + Artist");
@@ -134,7 +106,7 @@ public class ExcelHelper {
 
         int NUM_HEADER_ROWS_IN_MATCHUPS = 1;
         for(int i = 0; i < matchupsList.size(); i++) {
-            Row row = sheet.createRow(i + NUM_HEADER_ROWS_IN_MATCHUPS);
+            Row row = resultsSheet.createRow(i + NUM_HEADER_ROWS_IN_MATCHUPS);
             Matchup matchup = matchupsList.get(i);
             row.createCell(0).setCellValue(matchup.getAlbum1());
             row.createCell(1).setCellValue(matchup.getAlbum1String());
@@ -144,7 +116,7 @@ public class ExcelHelper {
         }
         // Resize all columns to fit the content size
         for(int i = 0; i < 5; i++) {
-            sheet.autoSizeColumn(i);
+            resultsSheet.autoSizeColumn(i);
         }
 
         try
@@ -189,10 +161,19 @@ public class ExcelHelper {
     }
 
     public Matchup getNextMatchup() {
+        if(nextMatchupIndex >= matchupsList.size()) {
+            return null;
+        }
         return matchupsList.get(nextMatchupIndex++);
     }
 
     public Album getAlbum(int index) {
         return albums[index];
+    }
+
+    public void reportResult(int matchupIndex, int winningAlbumIndex) {
+        matchupsList.get(matchupIndex).setResult(winningAlbumIndex);
+
+        //todo: have a buffer of unsaved progress that user has to manually save. hopefully a concerned dialog in case they try to close without doing so
     }
 }

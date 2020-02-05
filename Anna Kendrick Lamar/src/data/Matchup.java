@@ -1,5 +1,10 @@
 package data;
 
+import com.sun.xml.internal.ws.api.message.ExceptionHasMessage;
+import javafx.scene.control.Alert;
+
+import java.util.Arrays;
+
 public class Matchup {
 
     private int album1; // album1 should always be the lesser #
@@ -37,6 +42,11 @@ public class Matchup {
     }
 
     public void setResult(int result) {
+        if(result != album1 && result != album2 && result != Constants.RESULT_SKIPPED) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Invalid result. Tried to log " + result + " as victor of matchup with album1: " + album1 + " and album2: " + album2);
+            alert.showAndWait();
+        }
         this.result = result;
     }
 }

@@ -1,12 +1,16 @@
 
-msquid:S2095U"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(˜„°Žÿÿÿÿÿ8çŒÞæú-
-¤squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ã­Üßøÿÿÿÿ8ê·¶æð-
-isquid:CommentedOutCodeLine-"<This block of commented-out lines of code should be removed.(°ú˜¦8çŒÞæú-
-jsquid:HiddenFieldCheckU"<Rename "workbook" which hides the field declared at line 24.(˜„°Žÿÿÿÿÿ8çŒÞæú-
-Ysquid:S26961"6Make the enclosing method "static" or remove this set.(ÝÍ°Óþÿÿÿÿ8ìòþäù-
-_squid:UselessImportCheck"/Remove this unused import 'javafx.stage.Stage'.(æÄ¸²úÿÿÿÿ8åÊïù-
-Psquid:S11353"2Complete the task associated to this TODO comment.(ôžÉ8çŒÞæú-
-Ysquid:S26962"6Make the enclosing method "static" or remove this set.(¥ë¥úüÿÿÿÿ8çŒÞæú-
-psquid:S00117g"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î÷ÿ8çŒÞæú-
-Vsquid:S1135„"2Complete the task associated to this TODO comment.(­ËØƒüÿÿÿÿ8çŒÞæú-
-Gsquid:S1148‹"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8çŒÞæú-
+Zsquid:S2696§"6Make the enclosing method "static" or remove this set.(ë½î‹þÿÿÿÿ8öë‚Ò€.
+Gsquid:S1148Ž"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8çŒÞæú-
+Vsquid:S1135‡"2Complete the task associated to this TODO comment.(­ËØƒüÿÿÿÿ8çŒÞæú-
+Usquid:S2696‘"6Make the enclosing method "static" or remove this set.(ùËÆà8˜å¾Ñ€.
+msquid:S2095Y"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(˜„°Žÿÿÿÿÿ8çŒÞæú-
+¤squid:S1186""€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ã­Üßøÿÿÿÿ8ê·¶æð-
+isquid:CommentedOutCodeLine1"<This block of commented-out lines of code should be removed.(°ú˜¦8çŒÞæú-
+psquid:S00117k"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î÷ÿ8çŒÞæú-
+Ysquid:S26965"6Make the enclosing method "static" or remove this set.(ÝÍ°Óþÿÿÿÿ8ìòþäù-
+asquid:UselessImportCheck"1Remove this unused import 'data.AlbumArtworkMap'.(ó‘Ã¬ÿÿÿÿÿ8ËÙÛ¤.
+`squid:UselessImportCheck"5Remove this unused import 'javafx.scene.image.Image'.(‰¿½Ç8ËÙÛ¤.
+Vsquid:S1135±"2Complete the task associated to this TODO comment.(Ü§èµüÿÿÿÿ8êºŸü€.
+hsquid:UselessImportCheck"8Remove this unused import 'java.net.URISyntaxException'.(Ä®íÿÿÿÿÿ8ËÙÛ¤.
+Psquid:S11357"2Complete the task associated to this TODO comment.(ôžÉ8çŒÞæú-
+Ysquid:S26966"6Make the enclosing method "static" or remove this set.(¥ë¥úüÿÿÿÿ8¥‡¹¥.

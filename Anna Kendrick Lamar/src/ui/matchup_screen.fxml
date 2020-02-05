@@ -2,16 +2,35 @@
 
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ToolBar?>
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane prefHeight="80.0" prefWidth="1000.0" style="-fx-background-color: #000000;" VBox.vgrow="NEVER" />
+      <ToolBar prefHeight="40.0" prefWidth="1000.0" VBox.vgrow="NEVER">
+         <items>
+            <Pane HBox.hgrow="ALWAYS" />
+            <Button fx:id="helpToolbarButton" text="Show Help"/>
+            <Button fx:id="historyToolbarButton" text="See History"/>
+            <Button fx:id="saveToolbarButton" text="Save Changes"/>
+         </items>
+      </ToolBar>
       <HBox prefHeight="700.0" prefWidth="1000.0" VBox.vgrow="ALWAYS">
          <children>
             <fx:include fx:id="leftAlbumDisplay" source="album_matchup_display.fxml"/>
             <fx:include fx:id="rightAlbumDisplay" source="album_matchup_display.fxml"/>
          </children>
       </HBox>
-      <Pane prefHeight="100.0" prefWidth="1000.0" style="-fx-background-color: #eaeaea;" VBox.vgrow="SOMETIMES" />
-      <Pane prefHeight="80.0" prefWidth="1000.0" style="-fx-background-color: #aeaeae;" VBox.vgrow="NEVER" />
+      <HBox prefHeight="100.0" prefWidth="1000.0" VBox.vgrow="SOMETIMES">
+         <padding>
+            <Insets left="50" right="50" />
+         </padding>
+         <children>
+            <fx:include fx:id="leftAlbumChoice" source="album_left_choice_button.fxml"/>
+            <fx:include fx:id="skipAlbumChoice" source="album_skip_choice_button.fxml"/>
+            <fx:include fx:id="rightAlbumChoice" source="album_right_choice_button.fxml"/>
+         </children>
+      </HBox>
+      <Pane prefHeight="80.0" prefWidth="1000.0" VBox.vgrow="NEVER" />
    </children>
 </VBox>

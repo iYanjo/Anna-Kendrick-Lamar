@@ -2,16 +2,20 @@
 
 <?import javafx.scene.layout.*?>
 
-<?import javafx.scene.text.Text?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Label?>
 <VBox alignment="CENTER" prefWidth="45" HBox.hgrow="SOMETIMES">
     <children>
-        <Text id="score_type" text="score" textAlignment="CENTER" />
-        <Text id="score_value" text="10.0" textAlignment="CENTER">
+        <Label id="score_type" text="score" textAlignment="CENTER" >
+            <font>
+                <Font size="8.0" />
+            </font>
+        </Label>
+        <Label id="score_value" text="10.0" textAlignment="CENTER">
             <font>
                 <Font size="14.0" />
             </font>
-        </Text>
+        </Label>
     </children>
 </VBox>
 

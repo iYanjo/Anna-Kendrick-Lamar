@@ -1,0 +1,4 @@
+
+Xsquid:S1191"5Use classes from the Java API instead of Sun classes.(áÍäüşÿÿÿÿ8ÆÆÏû€.
+„squid:UselessImportCheck"TRemove this unused import 'com.sun.xml.internal.ws.api.message.ExceptionHasMessage'.(áÍäüşÿÿÿÿ8À€Ğû€.
+]squid:UselessImportCheck"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8œÖü€.

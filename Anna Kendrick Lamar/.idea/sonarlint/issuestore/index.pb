@@ -29,3 +29,9 @@ E
 src/data/Matchup.java,1\3\13d1908981e97059f0c9338a011e3f6725411cb6
 M
 src/data/AlbumArtworkMap.java,d\b\db68c65aae00df26a738cc3f4edcc254f1e945e9
+T
+$src/ui/album_skip_choice_button.fxml,d\a\da0172f987d3d8284fb48507b24bfe941a0aa6c7
+U
+%src/ui/album_right_choice_button.fxml,7\8\78343740ed8b03f52c772d856d61b2e0ae9036d3
+T
+$src/ui/album_left_choice_button.fxml,c\b\cbc780d9428014db1e1bc24edb0f0f8d71d7de09
