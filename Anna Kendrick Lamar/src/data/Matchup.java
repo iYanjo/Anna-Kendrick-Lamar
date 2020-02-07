@@ -13,13 +13,18 @@ public class Matchup {
     private String album2String;
     private int result;
 
-    public Matchup(int album1, String album1String, int album2, String album2String){
+    public Matchup(int album1, String album1String, int album2, String album2String, int result){
         this.album1 = album1;
         this.album1String = album1String;
         this.album2 = album2;
         this.album2String = album2String;
-        this.result = Constants.RESULT_EMPTY;
+        this.result = result;
     }
+
+    public Matchup(int album1, String album1String, int album2, String album2String){
+        this(album1, album1String, album2, album2String, Constants.RESULT_EMPTY);
+    }
+
 
     public int getAlbum1() {
         return album1;

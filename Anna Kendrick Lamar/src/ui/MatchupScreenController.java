@@ -110,7 +110,7 @@ public class MatchupScreenController {
         saveToolbarButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                // todo: save
+                mExcelHelper.saveResults();
             }
         });
 
@@ -118,12 +118,12 @@ public class MatchupScreenController {
     }
 
     private synchronized void recordLeftAlbumWin() {
-        mCurrentMatchup.setResult(mCurrentMatchup.getAlbum1());
+        mExcelHelper.setResult(mCurrentMatchup.getAlbum1());
         setupNextMatchup();
     }
 
     private synchronized void recordRightAlbumWin() {
-        mCurrentMatchup.setResult(mCurrentMatchup.getAlbum2());
+        mExcelHelper.setResult(mCurrentMatchup.getAlbum2());
         setupNextMatchup();
     }
 
@@ -148,9 +148,6 @@ public class MatchupScreenController {
         ImageView imageView = (ImageView) albumDisplay.lookup("#album_image");
         final String albumFileString = AlbumArtworkMap.ALBUM_ARTWORK_FILENAMES[albumIndex];
         File image = new File(ARTWORK_DIR + albumFileString);
-        if(!image.isFile()) {
-//            image = new File(ARTWORK_DEFAULT_PATH);
-        }
         try {
             imageView.setImage(new Image(getClass().getResource(isValidAlbumFileString(albumFileString) ? CLASS_ARTWORK_DIR + albumFileString : CLASS_ARTWORK_DEFAULT_PATH).toURI().toString()));
         } catch (URISyntaxException e) {

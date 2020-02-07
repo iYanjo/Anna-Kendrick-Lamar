@@ -1,16 +1,29 @@
 
-Zsquid:S2696§"6Make the enclosing method "static" or remove this set.(ë½î‹þÿÿÿÿ8öë‚Ò€.
-Gsquid:S1148Ž"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8çŒÞæú-
-Vsquid:S1135‡"2Complete the task associated to this TODO comment.(­ËØƒüÿÿÿÿ8çŒÞæú-
-Usquid:S2696‘"6Make the enclosing method "static" or remove this set.(ùËÆà8˜å¾Ñ€.
-msquid:S2095Y"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(˜„°Žÿÿÿÿÿ8çŒÞæú-
-¤squid:S1186""€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ã­Üßøÿÿÿÿ8ê·¶æð-
-isquid:CommentedOutCodeLine1"<This block of commented-out lines of code should be removed.(°ú˜¦8çŒÞæú-
-psquid:S00117k"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î÷ÿ8çŒÞæú-
-Ysquid:S26965"6Make the enclosing method "static" or remove this set.(ÝÍ°Óþÿÿÿÿ8ìòþäù-
-asquid:UselessImportCheck"1Remove this unused import 'data.AlbumArtworkMap'.(ó‘Ã¬ÿÿÿÿÿ8ËÙÛ¤.
-`squid:UselessImportCheck"5Remove this unused import 'javafx.scene.image.Image'.(‰¿½Ç8ËÙÛ¤.
-Vsquid:S1135±"2Complete the task associated to this TODO comment.(Ü§èµüÿÿÿÿ8êºŸü€.
-hsquid:UselessImportCheck"8Remove this unused import 'java.net.URISyntaxException'.(Ä®íÿÿÿÿÿ8ËÙÛ¤.
-Psquid:S11357"2Complete the task associated to this TODO comment.(ôžÉ8çŒÞæú-
-Ysquid:S26966"6Make the enclosing method "static" or remove this set.(¥ë¥úüÿÿÿÿ8¥‡¹¥.
+nsquid:S2095„"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(˜„°Žÿÿÿÿÿ8·Â°ø.
+Fsquid:S1148p"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8çŒÞæú-
+Tsquid:S2696y"6Make the enclosing method "static" or remove this set.(èáð•8¥ûÝ÷.
+¤squid:S1186$"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ã­Üßøÿÿÿÿ8ê·¶æð-
+Ysquid:S26968"6Make the enclosing method "static" or remove this set.(¥ë¥úüÿÿÿÿ8¥‡¹¥.
+Tsquid:S2696x"6Make the enclosing method "static" or remove this set.(é†üŸ8˜å¾Ñ€.
+qsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(ëªáÜ8Ã›¢÷.
+Tsquid:S2696Í"6Make the enclosing method "static" or remove this set.(‡ŒØQ8ïÞÙ÷.
+Gsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8¸ÀÀø.
+Vsquid:S1135í"2Complete the task associated to this TODO comment.(Ü§èµüÿÿÿÿ8ÀëÈ÷.
+isquid:CommentedOutCodeLine3"<This block of commented-out lines of code should be removed.(°ú˜¦8çŒÞæú-
+Psquid:S11359"2Complete the task associated to this TODO comment.(ôžÉ8çŒÞæú-
+Gsquid:S1148Ò"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8ÀëÈ÷.
+Gsquid:S1148‹"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8¸ÀÀø.
+osquid:CommentedOutCodeLineƒ"<This block of commented-out lines of code should be removed.(ÔüúÃÿÿÿÿÿ8ÆÅçø.
+Zsquid:S2696ë"6Make the enclosing method "static" or remove this set.(³ÕÅûÿÿÿÿ8—‘‘ø.
+dsquid:S2147Œ"ECombine this catch with the one at line 266, which has the same body.(ï­£Ä8¸ÀÀø.
+jsquid:HiddenFieldCheck§"@Rename "matchupsList" which hides the field declared at line 31.(ÿä„‹8üŠ°÷.
+Ysquid:S26967"6Make the enclosing method "static" or remove this set.(ÝÍ°Óþÿÿÿÿ8ìòþäù-
+isquid:S2095»"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(™¯‰ï8Ë¥÷.
+Zsquid:S2696Î"6Make the enclosing method "static" or remove this set.(Ïé±ýÿÿÿÿ8š¤Þ÷.
+Ssquid:S1191"5Use classes from the Java API instead of Sun classes.(±§¡ñ8°Ì‚÷.
+dsquid:S2147Ô"ECombine this catch with the one at line 209, which has the same body.(ï­£Ä8ÀëÈ÷.
+qsquid:S2095º"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(žÛ¥÷ùÿÿÿÿ8¼ØÉ÷.
+Gsquid:S1148Õ"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8ÀëÈ÷.
+nsquid:CommentedOutCodeLinew"<This block of commented-out lines of code should be removed.(ÔüúÃÿÿÿÿÿ8ÆÅçø.
+Gsquid:S1148Ø"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8„Çêø.
+dsquid:S2147×"ECombine this catch with the one at line 209, which has the same body.(­™£•8„Çêø.

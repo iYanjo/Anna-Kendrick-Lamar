@@ -35,3 +35,5 @@ U
 %src/ui/album_right_choice_button.fxml,7\8\78343740ed8b03f52c772d856d61b2e0ae9036d3
 T
 $src/ui/album_left_choice_button.fxml,c\b\cbc780d9428014db1e1bc24edb0f0f8d71d7de09
+H
+src/META-INF/MANIFEST.MF,e\4\e4b1fd2293ba1e598e6bec4e0ee3b6b6851eb5a2

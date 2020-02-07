@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Anna Kendrick Lamar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ui/album_left_choice_button.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/album_right_choice_button.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/album_skip_choice_button.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/5/35b295ef980de84a71d03da0d36705bc43bdad7f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/5/35b295ef980de84a71d03da0d36705bc43bdad7f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5eb03b9891c89cdc08f1cf8481697423935a5dff" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5eb03b9891c89cdc08f1cf8481697423935a5dff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/5/d5d9892d6c14c0458b0bb2aad05718cc57de9002" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/5/d5d9892d6c14c0458b0bb2aad05718cc57de9002" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Anna_Kendrick_Lamar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/META-INF/Anna Kendrick Lamar.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/data/Matchup.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/data/Matchup.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/excel/ExcelHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/excel/ExcelHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/res/.~lock.Albums_2010s.xlsx#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/MatchupScreenController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/MatchupScreenController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/MatchupScreenController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/MatchupScreenController$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/MatchupScreenController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/MatchupScreenController$7.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/MatchupScreenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/MatchupScreenController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/album_matchup_display.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/album_matchup_display.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/album_score_text.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/album_score_text.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/album_text.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/album_text.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/matchup_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/matchup_screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/AlbumArtworkMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/AlbumArtworkMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/SigninScreenController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/SigninScreenController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/SigninScreenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Anna Kendrick Lamar/ui/SigninScreenController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/Matchup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Matchup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/excel/ExcelHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/excel/ExcelHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/Albums_2010s.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/Albums_2010s.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/MatchupScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/MatchupScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/album_matchup_display.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/album_matchup_display.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/album_score_text.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/album_score_text.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/album_text.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/album_text.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/matchup_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/matchup_screen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/SigninScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/SigninScreenController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,10 +121,11 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="C:/Program Files/Java/poi-4.1.1/ooxml-lib/xmlbeans-3.1.0.jar!/" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -254,10 +255,18 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="872" y="358" key="#Plugins/0.0.2560.1400@0.0.2560.1400" timestamp="1576469955116" />
+    <state x="1029" y="536" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1581070111013">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1029" y="536" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1581070111013" />
     <state x="1085" y="409" key="#com.intellij.ide.util.MemberChooser" timestamp="1578881187975">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="409" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1578881187975" />
+    <state x="1009" y="483" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1581072174576">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1009" y="483" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1581072174576" />
     <state x="912" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1580718727634">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -266,58 +275,62 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1034" y="415" key="DetectedRootsChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1576468438639" />
-    <state x="1060" y="454" key="FileChooserDialogImpl" timestamp="1579078034757">
+    <state x="1060" y="454" key="FileChooserDialogImpl" timestamp="1581073156901">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1579078034757" />
-    <state width="1265" height="408" key="GridCell.Tab.0.bottom" timestamp="1580895490016">
+    <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1581073156901" />
+    <state width="1803" height="499" key="GridCell.Tab.0.bottom" timestamp="1581073636087">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1265" height="408" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1580895490016" />
-    <state width="1265" height="408" key="GridCell.Tab.0.center" timestamp="1580895490016">
+    <state width="1803" height="499" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1581073636087" />
+    <state width="1803" height="499" key="GridCell.Tab.0.center" timestamp="1581073636087">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1265" height="408" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1580895490016" />
-    <state width="1265" height="408" key="GridCell.Tab.0.left" timestamp="1580895490016">
+    <state width="1803" height="499" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1581073636087" />
+    <state width="1803" height="499" key="GridCell.Tab.0.left" timestamp="1581073636087">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1265" height="408" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1580895490016" />
-    <state width="1265" height="408" key="GridCell.Tab.0.right" timestamp="1580895490016">
+    <state width="1803" height="499" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1581073636087" />
+    <state width="1803" height="499" key="GridCell.Tab.0.right" timestamp="1581073636087">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1265" height="408" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1580895490016" />
-    <state width="1809" height="499" key="GridCell.Tab.1.bottom" timestamp="1580722805806">
+    <state width="1803" height="499" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1581073636087" />
+    <state width="1803" height="499" key="GridCell.Tab.1.bottom" timestamp="1581073636087">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1809" height="499" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1580722805806" />
-    <state width="1809" height="499" key="GridCell.Tab.1.center" timestamp="1580722805806">
+    <state width="1803" height="499" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1581073636087" />
+    <state width="1803" height="499" key="GridCell.Tab.1.center" timestamp="1581073636087">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1809" height="499" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1580722805806" />
-    <state width="1809" height="499" key="GridCell.Tab.1.left" timestamp="1580722805806">
+    <state width="1803" height="499" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1581073636087" />
+    <state width="1803" height="499" key="GridCell.Tab.1.left" timestamp="1581073636087">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1809" height="499" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1580722805806" />
-    <state width="1809" height="499" key="GridCell.Tab.1.right" timestamp="1580722805806">
+    <state width="1803" height="499" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1581073636087" />
+    <state width="1803" height="499" key="GridCell.Tab.1.right" timestamp="1581073636087">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1809" height="499" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1580722805806" />
-    <state x="760" y="274" key="SettingsEditor" timestamp="1576469457293">
+    <state width="1803" height="499" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1581073636087" />
+    <state x="760" y="274" key="SettingsEditor" timestamp="1581073158816">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="760" y="274" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1576469457293" />
-    <state x="976" y="523" key="com.intellij.ide.util.TipDialog" timestamp="1580888886449">
+    <state x="760" y="274" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1581073158816" />
+    <state x="976" y="523" key="com.intellij.ide.util.TipDialog" timestamp="1581065662970">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="976" y="523" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1580888886449" />
+    <state x="976" y="523" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1581065662970" />
     <state x="984" y="593" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1578882007570">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="984" y="593" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.2560.1400@0.0.2560.1400" timestamp="1578882007570" />
-    <state x="976" y="437" width="607" height="526" key="find.popup" timestamp="1580807313647">
+    <state x="927" y="314" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1581069195264">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="976" y="437" width="607" height="526" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1580807313647" />
+    <state x="927" y="314" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1581069195264" />
+    <state x="976" y="437" width="607" height="526" key="find.popup" timestamp="1581065952400">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="976" y="437" width="607" height="526" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1581065952400" />
     <state x="663" y="320" key="new project wizard" timestamp="1576469933747">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -330,23 +343,43 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="936" y="330" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1580720006150" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1580805225969">
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1581070122441">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1580805225969" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1581070122441" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ui/SigninScreenController.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="42" />
+          <url>file://$PROJECT_DIR$/src/excel/ExcelHelper.java</url>
+          <line>218</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ui/MatchupScreenController.java</url>
+          <url>file://$PROJECT_DIR$/src/excel/ExcelHelper.java</url>
+          <line>222</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/excel/ExcelHelper.java</url>
+          <line>189</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ui/SigninScreenController.java</url>
+          <line>114</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ui/SigninScreenController.java</url>
           <line>116</line>
-          <option name="timeStamp" value="44" />
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/excel/ExcelHelper.java</url>
+          <line>111</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,20 +1,20 @@
 
-osquid:CommentedOutCodeLine˜"<This block of commented-out lines of code should be removed.(Ÿ‹‡÷úÿÿÿÿ8ğÅ©¥.
-csquid:UselessImportCheck"3Remove this unused import 'javafx.scene.text.Text'.(˜ÿ‡Üşÿÿÿÿ8“îØú€.
-`squid:UselessImportCheck"5Remove this unused import 'javafx.stage.FileChooser'.(–¹ë8Ä’Äû€.
-Usquid:S11351"2Complete the task associated to this TODO comment.(µ˜ÿÑÿÿÿÿÿ8ãÅôû€.
-Usquid:S1135e"2Complete the task associated to this TODO comment.(ùôè´ûÿÿÿÿ8ğÅ©¥.
-Fsquid:S1604D"(Make this anonymous inner class a lambda(ŒŸ†¡8Í³—¥.
 Ksquid:S1604Q"(Make this anonymous inner class a lambda(–İáıÿÿÿÿ8‰Ã¨¥.
 Fsquid:S1604b"(Make this anonymous inner class a lambda(±Ä£8ğÅ©¥.
-Ksquid:S1604J"(Make this anonymous inner class a lambda(í”øâøÿÿÿÿ8Í³—¥.
-Ksquid:S1604n"(Make this anonymous inner class a lambda(°ù–¡úÿÿÿÿ8ğÅ©¥.
-asquid:UselessImportCheck"7Remove this unused import 'javafx.scene.control.Alert'.(ÊÇê:8€ÔÃû€.
+`squid:UselessImportCheck"5Remove this unused import 'javafx.stage.FileChooser'.(–¹ë8Ä’Äû€.
 Fsquid:S1604>"(Make this anonymous inner class a lambda(Í¢‡8Í³—¥.
+asquid:UselessImportCheck"7Remove this unused import 'javafx.scene.control.Alert'.(ÊÇê:8€ÔÃû€.
+Ksquid:S1604n"(Make this anonymous inner class a lambda(°ù–¡úÿÿÿÿ8ğÅ©¥.
 Psquid:S11350"2Complete the task associated to this TODO comment.(èášş8šöÀû€.
 Usquid:S1135k"2Complete the task associated to this TODO comment.(Ä³¤½şÿÿÿÿ8ğÅ©¥.
-Fsquid:S1604h"(Make this anonymous inner class a lambda(¤¥‚ª8ğÅ©¥.
-Vsquid:S1135‹"2Complete the task associated to this TODO comment.(®è¡ğûÿÿÿÿ8ğÅ©¥.
 [squid:S1068"8Remove this unused "ARTWORK_DEFAULT_PATH" private field.(æ÷†µúÿÿÿÿ8á«˜Ó€.
-Gsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ğÅ©¥.
-Osquid:S1135q"2Complete the task associated to this TODO comment.(®Ÿğ8ğÅ©¥.
+Nsquid:S1481–"*Remove this unused "image" local variable.(·ëŒåûÿÿÿÿ8¬—Ö÷.
+csquid:UselessImportCheck"3Remove this unused import 'javafx.scene.text.Text'.(˜ÿ‡Üşÿÿÿÿ8“îØú€.
+Fsquid:S1604D"(Make this anonymous inner class a lambda(ŒŸ†¡8Í³—¥.
+Fsquid:S1604h"(Make this anonymous inner class a lambda(¤¥‚ª8ğÅ©¥.
+Gsquid:S1148š"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ğÅ©¥.
+Usquid:S11351"2Complete the task associated to this TODO comment.(µ˜ÿÑÿÿÿÿÿ8ãÅôû€.
+Usquid:S1135e"2Complete the task associated to this TODO comment.(ùôè´ûÿÿÿÿ8ğÅ©¥.
+Ksquid:S1604J"(Make this anonymous inner class a lambda(í”øâøÿÿÿÿ8Í³—¥.
+Vsquid:S1135‹"2Complete the task associated to this TODO comment.(®è¡ğûÿÿÿÿ8ğÅ©¥.
+]squid:S1854–"9Remove this useless assignment to local variable "image".(·ëŒåûÿÿÿÿ8¬—Ö÷.

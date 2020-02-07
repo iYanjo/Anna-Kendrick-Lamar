@@ -72,10 +72,14 @@ public class SigninScreenController {
                         new FileChooser.ExtensionFilter("Choose the Excel from before", "*.xlsx"));
                 File spreadsheetFile = fileChooser.showOpenDialog(mPrimaryStage);
 
-                if(spreadsheetFile != null) {
+                if(excelHelper.getResultsSpreadsheet(spreadsheetFile)) {
                     setupMatchupScreen();
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Invalid File");
+                    alert.setContentText("Please choose a valid results spreadsheet");
+                    alert.showAndWait();
                 }
-                //todo: make getMatchupsSpreadsheet instead of createMatchupsSpreadsheet. set nextMatchupIndex to right #
             }
         });
     }

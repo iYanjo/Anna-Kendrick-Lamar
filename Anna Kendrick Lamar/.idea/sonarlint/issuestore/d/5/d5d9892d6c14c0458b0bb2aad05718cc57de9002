@@ -1,16 +1,15 @@
 
-`squid:UselessImportCheck"5Remove this unused import 'javafx.scene.image.Image'.(‰¿½Ç8”×Ó€.
-Gsquid:S1148ƒ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8÷í¢Ó€.
-Usquid:S1135N"2Complete the task associated to this TODO comment.(Ï‚ùûÿÿÿÿ8÷í¢Ó€.
-wsquid:S3012V"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(‚«‹8÷í¢Ó€.
-zsquid:S1450"\Remove the "nthTimeButton" field and declare it as a local variable in the relevant methods.(Ãÿ•8ß¤—òğ-
-Ssquid:S1191"5Use classes from the Java API instead of Sun classes.(±§¡ñ8³Î¹Áú-
-squid:S1186 "€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(õöòğıÿÿÿÿ
-Fsquid:S1604B"(Make this anonymous inner class a lambda(ÂÄñõ8Âõ–òğ-
-Fsquid:S1148q"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8÷í¢Ó€.
-?squid:S1604)"(Make this anonymous inner class a lambda(›Ò¦ô
-asquid:UselessImportCheck"1Remove this unused import 'data.AlbumArtworkMap'.(ó‘Ã¬ÿÿÿÿÿ8‹ªÎÒ€.
-isquid:UselessImportCheck"9Remove this unused import 'javafx.scene.image.ImageView'.(áÿ®Ãüÿÿÿÿ8”×Ó€.
-Fsquid:S1148f"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8÷í¢Ó€.
+Fsquid:S1148j"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Çä‡÷.
 |squid:S1450"^Remove the "firstTimeButton" field and declare it as a local variable in the relevant methods.(„ì‘—8êÙñğ-
+`squid:UselessImportCheck"5Remove this unused import 'javafx.scene.image.Image'.(‰¿½Ç8”×Ó€.
+squid:S1186 "€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(õöòğıÿÿÿÿ
+Ssquid:S1191"5Use classes from the Java API instead of Sun classes.(±§¡ñ8³Î¹Áú-
+asquid:UselessImportCheck"1Remove this unused import 'data.AlbumArtworkMap'.(ó‘Ã¬ÿÿÿÿÿ8‹ªÎÒ€.
+zsquid:S1450"\Remove the "nthTimeButton" field and declare it as a local variable in the relevant methods.(Ãÿ•8ß¤—òğ-
+Gsquid:S1148‡"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Çä‡÷.
 hsquid:UselessImportCheck"8Remove this unused import 'java.net.URISyntaxException'.(Ä®íÿÿÿÿÿ8·Ê¤Ó€.
+?squid:S1604)"(Make this anonymous inner class a lambda(›Ò¦ô
+Fsquid:S1604B"(Make this anonymous inner class a lambda(ÂÄñõ8Âõ–òğ-
+Fsquid:S1148u"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Çä‡÷.
+wsquid:S3012Z"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(‚«‹8Çä‡÷.
+isquid:UselessImportCheck"9Remove this unused import 'javafx.scene.image.ImageView'.(áÿ®Ãüÿÿÿÿ8”×Ó€.
