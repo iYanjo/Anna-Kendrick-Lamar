@@ -17,8 +17,7 @@ public class Main extends Application {
         fxmlLoader.setController(signinScreenController);
         Parent root = fxmlLoader.load();
         primaryStage.setTitle("Anna Kendrick Lamar");
-        new Image(getClass().getResourceAsStream("\\res\\anna bae icon.png"));
-//        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("..\\res\\anna bae icon.png")));
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/res/anna bae icon.png")));
         primaryStage.setScene(new Scene(root, 1000, 1000));
         primaryStage.show();
         signinScreenController.setupSigninScene(primaryStage, root);

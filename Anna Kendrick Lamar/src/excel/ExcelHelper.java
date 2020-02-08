@@ -12,6 +12,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.*;
+import java.net.URISyntaxException;
 import java.util.*;
 
 import static org.apache.poi.ss.usermodel.CellType.NUMERIC;
@@ -19,8 +20,7 @@ import static org.apache.poi.ss.usermodel.CellType.STRING;
 
 public class ExcelHelper {
 
-    final private static int NUM_HEADER_ROWS_IN_MATCHUPS = 1;
-
+    private final static int NUM_HEADER_ROWS_IN_MATCHUPS = 1;
 
     XSSFWorkbook albumsWorkbook;
     XSSFSheet albumsSheet;
@@ -41,10 +41,7 @@ public class ExcelHelper {
     }
 
     public void getAlbumsSpreadsheet() throws IOException {
-        File spreadsheet = new File(".\\src\\res\\Albums_2010s.xlsx");
-
-        FileInputStream fis = new FileInputStream(spreadsheet);
-        try (XSSFWorkbook myWorkBook = new XSSFWorkbook(fis)) {
+        try (XSSFWorkbook myWorkBook = new XSSFWorkbook(getClass().getResourceAsStream("/res/Albums_2010s.xlsx"))) {
             albumsWorkbook = myWorkBook;
             albumsSheet = myWorkBook.getSheetAt(0);
             //unused "sorted" sheet
@@ -53,7 +50,7 @@ public class ExcelHelper {
 
         //top row is info, bottom two are metadata
         albumCount = albumsSheet.getPhysicalNumberOfRows()-3;
-        albumCount = 15;
+//        albumCount = 15;
         // todo: fix loading UX which can be long
         albums = new Album[albumCount];
 
@@ -183,6 +180,7 @@ public class ExcelHelper {
         }
 
         try {
+            resultsFile = file;
             FileInputStream excelFile = new FileInputStream(file);
             Workbook matchupWorkbook = new XSSFWorkbook(excelFile);
             resultsSheet = matchupWorkbook.getSheetAt(0);

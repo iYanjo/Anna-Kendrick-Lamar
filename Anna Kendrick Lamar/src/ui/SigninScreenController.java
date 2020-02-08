@@ -126,7 +126,7 @@ public class SigninScreenController {
     }
 
     public void setupMatchupScreen() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("matchup_screen.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/matchup_screen.fxml"));
         fxmlLoader.setController(this);
         Parent root = null;
         try {

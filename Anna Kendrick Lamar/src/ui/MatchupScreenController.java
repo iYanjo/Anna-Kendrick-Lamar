@@ -30,6 +30,7 @@ public class MatchupScreenController {
     private static final String ARTWORK_DEFAULT_PATH = ".\\src\\res\\nan.png";
     private static final String CLASS_ARTWORK_DEFAULT_PATH = "../res/nan.png";
     private static final String CLASS_ARTWORK_DIR = "../res/Album Artwork/";
+    private static final String JAR_CLASS_ARTWORK_DIR = "/res/Album Artwork/";
 
     private static Matchup mCurrentMatchup;
 
@@ -128,7 +129,7 @@ public class MatchupScreenController {
     }
 
     private synchronized void recordAlbumSkip() {
-        mCurrentMatchup.setResult(Constants.RESULT_SKIPPED);
+        mExcelHelper.setResult(Constants.RESULT_SKIPPED);
         setupNextMatchup();
     }
 
@@ -147,12 +148,7 @@ public class MatchupScreenController {
         // image
         ImageView imageView = (ImageView) albumDisplay.lookup("#album_image");
         final String albumFileString = AlbumArtworkMap.ALBUM_ARTWORK_FILENAMES[albumIndex];
-        File image = new File(ARTWORK_DIR + albumFileString);
-        try {
-            imageView.setImage(new Image(getClass().getResource(isValidAlbumFileString(albumFileString) ? CLASS_ARTWORK_DIR + albumFileString : CLASS_ARTWORK_DEFAULT_PATH).toURI().toString()));
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
+        imageView.setImage(new Image(getClass().getResourceAsStream(JAR_CLASS_ARTWORK_DIR + albumFileString)));
 
         // text
         Album album = mExcelHelper.getAlbum(albumIndex);
@@ -182,13 +178,5 @@ public class MatchupScreenController {
             scoreValueString = scoreValueString.substring(0, 5);
         }
         scoreValue.setText(scoreValueString);
-    }
-
-    private boolean isValidAlbumFileString(String fileString) {
-        if(fileString.length() < 5) {
-            return false;
-        }
-        String extension = fileString.substring(fileString.length()-5);
-        return extension.substring(1).equals(".jpg") || extension.substring(1).equals(".png") || extension.equals(".jpeg");
     }
 }
