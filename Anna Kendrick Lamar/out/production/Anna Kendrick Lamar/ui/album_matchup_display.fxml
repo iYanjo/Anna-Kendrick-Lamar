@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="700.0" prefWidth="500.0" HBox.hgrow="ALWAYS" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+    <padding>
+        <Insets left="25.0" right="25.0" top="50.0" />
+    </padding>
+    <children>
+        <ImageView id="album_image" fitHeight="450" fitWidth="450" preserveRatio="true" VBox.vgrow="SOMETIMES" />
+        <fx:include fx:id="album_title" source="album_text.fxml" VBox.vgrow="NEVER" />
+        <fx:include fx:id="album_artist" source="album_text.fxml" VBox.vgrow="NEVER" />
+        <fx:include fx:id="album_track" source="album_text.fxml" VBox.vgrow="NEVER" />
+        <fx:include fx:id="album_year" source="album_text.fxml" VBox.vgrow="NEVER" />
+        <HBox prefWidth="500.0" style="-fx-background-color: #f0f0f0;" VBox.vgrow="NEVER">
+            <padding>
+                <Insets top="5.0" bottom="5.0" />
+            </padding>
+            <children>
+                <fx:include fx:id="album_rym_score" source="album_score_text.fxml"/>
+                <fx:include fx:id="album_p4k_score" source="album_score_text.fxml"/>
+                <fx:include fx:id="album_fantano_score" source="album_score_text.fxml"/>
+                <fx:include fx:id="album_adjrym_score" source="album_score_text.fxml"/>
+                <fx:include fx:id="album_aggregate_score" source="album_score_text.fxml"/>
+            </children>
+        </HBox>
+    </children>
+</VBox>

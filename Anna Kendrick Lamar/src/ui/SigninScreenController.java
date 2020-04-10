@@ -2,6 +2,7 @@ package ui;
 
 import com.sun.istack.internal.Nullable;
 import data.AlbumArtworkMap;
+import data.Constants;
 import excel.ExcelHelper;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -72,7 +73,7 @@ public class SigninScreenController {
                         new FileChooser.ExtensionFilter("Choose the Excel from before", "*.xlsx"));
                 File spreadsheetFile = fileChooser.showOpenDialog(mPrimaryStage);
 
-                if(excelHelper.getResultsSpreadsheet(spreadsheetFile)) {
+                if(Constants.USE_COMPACT_EXCEL ? excelHelper.getCompactResultsSpreadsheet(spreadsheetFile) : excelHelper.getResultsSpreadsheet(spreadsheetFile)) {
                     setupMatchupScreen();
                 } else {
                     Alert alert = new Alert(Alert.AlertType.ERROR);

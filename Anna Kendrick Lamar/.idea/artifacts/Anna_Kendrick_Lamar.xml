@@ -1,13 +1,12 @@
 <component name="ArtifactManager">
   <artifact type="javafx" name="Anna Kendrick Lamar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Anna_Kendrick_Lamar</output-path>
+    <output-path>$PROJECT_DIR$/../../../Java</output-path>
     <properties id="javafx-properties">
       <options>
         <option name="appClass" value="ui.Main" />
         <option name="description" value="Anna is bae&#13;&#10;John Yan 2020" />
         <option name="height" value="1000" />
         <option name="htmlPlaceholderId" value="" />
-        <option name="nativeBundle" value="all" />
         <option name="title" value="Anna Kendrick Lamar" />
         <option name="vendor" value="" />
         <option name="version" value="" />
@@ -17,14 +16,6 @@
     <root id="root">
       <element id="archive" name="Anna_Kendrick_Lamar.jar">
         <element id="module-output" name="Anna Kendrick Lamar" />
-        <element id="extracted-dir" path="C:/Program Files/Java/stax-api-1.0.1.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="C:/Program Files/Java/poi-4.1.1/poi-4.1.1.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="C:/Program Files/Java/poi-4.1.1/poi-ooxml-4.1.1.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="C:/Program Files/Java/poi-4.1.1/poi-ooxml-schemas-4.1.1.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="C:/Program Files/Java/poi-4.1.1/lib/commons-collections4-4.4.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="C:/Program Files/Java/poi-4.1.1/lib/commons-compress-1.19.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="C:/Program Files/Java/poi-4.1.1/lib/commons-codec-1.13.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="C:/Program Files/Java/poi-4.1.1/ooxml-lib/xmlbeans-3.1.0.jar" path-in-jar="/" />
       </element>
     </root>
   </artifact>

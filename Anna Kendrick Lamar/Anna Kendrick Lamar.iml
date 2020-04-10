@@ -79,5 +79,9 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="poi-ooxml-schemas-4.1.1" level="project" />
+    <orderEntry type="library" name="xmlbeans-3.1.0" level="project" />
+    <orderEntry type="library" name="libraries" level="project" />
+    <orderEntry type="library" name="commons-collections4-4.4" level="project" />
   </component>
 </module>

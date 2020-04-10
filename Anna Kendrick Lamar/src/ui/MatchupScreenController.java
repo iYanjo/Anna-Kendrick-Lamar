@@ -7,8 +7,10 @@ import data.Matchup;
 import excel.ExcelHelper;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -22,6 +24,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URISyntaxException;
 
 public class MatchupScreenController {
@@ -111,7 +114,11 @@ public class MatchupScreenController {
         saveToolbarButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                mExcelHelper.saveResults();
+                if(Constants.USE_COMPACT_EXCEL) {
+                    mExcelHelper.saveCompactResults();
+                } else {
+                    mExcelHelper.saveResults();
+                }
             }
         });
 
@@ -137,11 +144,21 @@ public class MatchupScreenController {
         mCurrentMatchup = mExcelHelper.getNextMatchup();
         if(mCurrentMatchup == null) {
             mPrimaryStage.getScene().setOnKeyPressed(null);
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/victory_screen.fxml"));
+            fxmlLoader.setController(this);
+            Parent root = null;
+            try {
+                root = fxmlLoader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            mPrimaryStage.setScene(new Scene(root, 1000, 1000));
             //todo: it's over
             return;
         }
-        setupAlbumDisplay(leftAlbumDisplay, mCurrentMatchup.getAlbum1());
-        setupAlbumDisplay(rightAlbumDisplay, mCurrentMatchup.getAlbum2());
+        setupAlbumDisplay(leftAlbumDisplay, mCurrentMatchup.getAlbum1()-1);
+        setupAlbumDisplay(rightAlbumDisplay, mCurrentMatchup.getAlbum2()-1);
     }
 
     private void setupAlbumDisplay(VBox albumDisplay, int albumIndex) {

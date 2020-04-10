@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+    <columnConstraints>
+        <ColumnConstraints prefWidth="600.0" />
+    </columnConstraints>
+    <rowConstraints>
+      <RowConstraints prefHeight="300.0" />
+      <RowConstraints />
+    </rowConstraints>
+    <children>
+      <Pane prefHeight="200.0" prefWidth="200.0">
+         <children>
+                <Label text="Enter your name" />
+            <TextField id="nameTextField" fx:id="nameTextField" layoutX="13.0" layoutY="44.0" prefHeight="25.0" prefWidth="349.0" promptText="Use the same name if you've done this before." />
+         </children></Pane>
+        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+            <children>
+                <Button fx:id="firstTimeButton" mnemonicParsing="false" text="First time (this creates you a spreadsheet)" />
+            <Button fx:id="nthTimeButton" layoutX="300.0" mnemonicParsing="false" text="I've done this before (supply the same spreadsheet)" />
+            </children>
+        </Pane>
+    </children>
+</GridPane>
