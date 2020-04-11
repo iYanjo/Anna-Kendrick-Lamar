@@ -1,29 +1,0 @@
-
-nsquid:S2095„"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(˜„°ÿÿÿÿÿ8·Â°ø.
-Fsquid:S1148p"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8çŒŞæú-
-Tsquid:S2696y"6Make the enclosing method "static" or remove this set.(èáğ•8¥ûİ÷.
-¤squid:S1186$"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ã­Üßøÿÿÿÿ8ê·¶æğ-
-Ysquid:S26968"6Make the enclosing method "static" or remove this set.(¥ë¥úüÿÿÿÿ8¥‡¹¥.
-Tsquid:S2696x"6Make the enclosing method "static" or remove this set.(é†üŸ8˜å¾Ñ€.
-qsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(ëªáÜ8Ã›¢÷.
-Tsquid:S2696Í"6Make the enclosing method "static" or remove this set.(‡ŒØQ8ïŞÙ÷.
-Gsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¸ÀÀø.
-Vsquid:S1135í"2Complete the task associated to this TODO comment.(Ü§èµüÿÿÿÿ8ÀëÈ÷.
-isquid:CommentedOutCodeLine3"<This block of commented-out lines of code should be removed.(°ú˜¦8çŒŞæú-
-Psquid:S11359"2Complete the task associated to this TODO comment.(ôÉ8çŒŞæú-
-Gsquid:S1148Ò"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÀëÈ÷.
-Gsquid:S1148‹"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¸ÀÀø.
-osquid:CommentedOutCodeLineƒ"<This block of commented-out lines of code should be removed.(ÔüúÃÿÿÿÿÿ8ÆÅçø.
-Zsquid:S2696ë"6Make the enclosing method "static" or remove this set.(³ÕÅûÿÿÿÿ8—‘‘ø.
-dsquid:S2147Œ"ECombine this catch with the one at line 266, which has the same body.(ï­£Ä8¸ÀÀø.
-jsquid:HiddenFieldCheck§"@Rename "matchupsList" which hides the field declared at line 31.(ÿä„‹8üŠ°÷.
-Ysquid:S26967"6Make the enclosing method "static" or remove this set.(İÍ°Óşÿÿÿÿ8ìòşäù-
-isquid:S2095»"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(™¯‰ï8Ë¥÷.
-Zsquid:S2696Î"6Make the enclosing method "static" or remove this set.(Ïé±ıÿÿÿÿ8š¤Ş÷.
-Ssquid:S1191"5Use classes from the Java API instead of Sun classes.(±§¡ñ8°Ì‚÷.
-dsquid:S2147Ô"ECombine this catch with the one at line 209, which has the same body.(ï­£Ä8ÀëÈ÷.
-qsquid:S2095º"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(Û¥÷ùÿÿÿÿ8¼ØÉ÷.
-Gsquid:S1148Õ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÀëÈ÷.
-nsquid:CommentedOutCodeLinew"<This block of commented-out lines of code should be removed.(ÔüúÃÿÿÿÿÿ8ÆÅçø.
-Gsquid:S1148Ø"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8„Çêø.
-dsquid:S2147×"ECombine this catch with the one at line 209, which has the same body.(­™£•8„Çêø.
