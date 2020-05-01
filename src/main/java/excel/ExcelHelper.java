@@ -1,6 +1,7 @@
 package excel;
 
 import data.Album;
+import data.Configs;
 import data.Constants;
 import data.Matchup;
 import javafx.scene.control.Alert;
@@ -34,6 +35,7 @@ public class ExcelHelper {
     private static int currentMatchupIndex;
     private static int lastUnsavedResultIndex;
     private static int rngSeed = 0;
+    private static boolean hasUnsavedChanges = false;
 
     public ExcelHelper(){
     }
@@ -52,7 +54,9 @@ public class ExcelHelper {
 
         //top row is info, bottom two are metadata
         albumCount = albumsSheet.getPhysicalNumberOfRows()-3;
-//        albumCount = 6;
+        if(Configs.maxAlbums != null) {
+            albumCount = Configs.maxAlbums;
+        }
         // todo: fix loading UX which can be long
         albums = new Album[albumCount];
 
@@ -323,6 +327,13 @@ public class ExcelHelper {
         return matchupsList.get(currentMatchupIndex);
     }
 
+    public Matchup getPrevMatchup() {
+        if(currentMatchupIndex <= 0) {
+            return null;
+        }
+        return matchupsList.get(--currentMatchupIndex);
+    }
+
     public Album getAlbum(int index) {
         return albums[index];
     }
@@ -330,9 +341,14 @@ public class ExcelHelper {
     public void setResult(int winningAlbumIndex) {
         matchupsList.get(currentMatchupIndex).setResult(winningAlbumIndex);
         currentMatchupIndex++;
-
-        //todo: have a buffer of unsaved progress that user has to manually save. hopefully a concerned dialog in case they try to close without doing so
+        hasUnsavedChanges = true;
     }
+
+    public void setResult(int matchupIndex, int winningAlbumIndex) {
+        matchupsList.get(matchupIndex).setResult(winningAlbumIndex);
+        hasUnsavedChanges = true;
+    }
+
 
     public void saveResults() {
         for(int i = lastUnsavedResultIndex; i < currentMatchupIndex; i++) {
@@ -353,7 +369,6 @@ public class ExcelHelper {
             if(resultsFile != null) {
                 FileOutputStream outputStream = new FileOutputStream(resultsFile);
                 resultsSheet.getWorkbook().write(outputStream);
-//                resultsSheet.getWorkbook().close();
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error while saving results");
@@ -365,6 +380,7 @@ public class ExcelHelper {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        hasUnsavedChanges = false;
     }
 
     public void saveCompactResults() {
@@ -388,7 +404,6 @@ public class ExcelHelper {
             if(resultsFile != null) {
                 FileOutputStream outputStream = new FileOutputStream(resultsFile);
                 resultsSheet.getWorkbook().write(outputStream);
-//                resultsSheet.getWorkbook().close();
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error while saving results");
@@ -400,6 +415,11 @@ public class ExcelHelper {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        hasUnsavedChanges = false;
+    }
+
+    public boolean hasUnsavedChanges() {
+        return hasUnsavedChanges;
     }
 
 }

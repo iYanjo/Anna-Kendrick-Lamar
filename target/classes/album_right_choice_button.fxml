@@ -6,9 +6,9 @@
 <?import javafx.scene.control.Button?>
 <VBox alignment="CENTER" prefWidth="300" HBox.hgrow="SOMETIMES">
     <children>
-        <Label text="Right Album Wins" textAlignment="CENTER" >
-        </Label>
+        <Label text="Right Album Wins" textAlignment="CENTER" />
         <Button id="albumRightChoiceButton" text="Right"/>
+        <Label id="albumRightChoiceLabel" textAlignment="CENTER"/>
     </children>
 </VBox>
 

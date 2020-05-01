@@ -1,5 +1,6 @@
 package ui;
 
+import data.Configs;
 import data.Constants;
 import excel.ExcelHelper;
 import javafx.event.ActionEvent;
@@ -10,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
@@ -133,7 +135,11 @@ public class SigninScreenController {
             e.printStackTrace();
         }
 
-        mPrimaryStage.setScene(new Scene(root, 1000, 1000));
-        new MatchupScreenController(mPrimaryStage, root, excelHelper);
+        Scene scene = new Scene(root, 1000, 1000);
+        if(Configs.style == Configs.Style.DARCULA) {
+            scene.getStylesheets().add(getClass().getResource("/css/darcula.css").toExternalForm());
+        }
+        mPrimaryStage.setScene(scene);
+        new MatchupScreenController(mPrimaryStage, root, scene, excelHelper);
     }
 }

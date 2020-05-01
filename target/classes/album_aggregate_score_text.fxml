@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.geometry.Insets?>
+<HBox alignment="CENTER_LEFT" prefWidth="450" HBox.hgrow="SOMETIMES" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <HBox alignment="CENTER_RIGHT">
+            <padding>
+                <Insets left="100" />
+            </padding>
+            <Label id="score_type" text="score" textAlignment="CENTER" HBox.hgrow="NEVER">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+        </HBox>
+        <Label id="score_value" style="-fx-font-weight: bold" text="10.0" textAlignment="CENTER" HBox.hgrow="NEVER">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Pane HBox.hgrow="ALWAYS" />
+    </children>
+</HBox>

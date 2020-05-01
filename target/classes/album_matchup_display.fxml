@@ -14,17 +14,23 @@
         <fx:include fx:id="album_artist" source="album_text.fxml" VBox.vgrow="NEVER" />
         <fx:include fx:id="album_track" source="album_text.fxml" VBox.vgrow="NEVER" />
         <fx:include fx:id="album_year" source="album_text.fxml" VBox.vgrow="NEVER" />
-        <HBox prefWidth="500.0" style="-fx-background-color: #f0f0f0;" VBox.vgrow="NEVER">
-            <padding>
-                <Insets top="5.0" bottom="5.0" />
-            </padding>
-            <children>
-                <fx:include fx:id="album_rym_score" source="album_score_text.fxml"/>
-                <fx:include fx:id="album_p4k_score" source="album_score_text.fxml"/>
-                <fx:include fx:id="album_fantano_score" source="album_score_text.fxml"/>
-                <fx:include fx:id="album_adjrym_score" source="album_score_text.fxml"/>
-                <fx:include fx:id="album_aggregate_score" source="album_score_text.fxml"/>
-            </children>
-        </HBox>
+        <VBox>
+            <HBox prefWidth="500.0" VBox.vgrow="NEVER">
+                <padding>
+                    <Insets bottom="10.0" top="25.0" />
+                </padding>
+                <children>
+                    <fx:include fx:id="album_adjrym_score" source="album_score_text.fxml" />
+                    <fx:include fx:id="album_p4k_score" source="album_score_text.fxml" />
+                    <fx:include fx:id="album_fantano_score" source="album_score_text.fxml" />
+                </children>
+            </HBox>
+            <HBox prefWidth="500.0" VBox.vgrow="NEVER">
+                <padding>
+                    <Insets bottom="25.0" top="10.0" />
+                </padding>
+                <fx:include fx:id="album_aggregate_score" source="album_aggregate_score_text.fxml" />
+            </HBox>
+        </VBox>
     </children>
 </VBox>

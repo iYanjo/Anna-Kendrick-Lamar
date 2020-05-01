@@ -6,9 +6,9 @@
 <?import javafx.scene.control.Button?>
 <VBox alignment="CENTER" prefWidth="300" HBox.hgrow="SOMETIMES">
     <children>
-        <Label text="Skip This Matchup" textAlignment="CENTER" >
-        </Label>
+        <Label text="Skip This Matchup" textAlignment="CENTER"/>
         <Button id="albumSkipChoiceButton" text="Skip"/>
+        <Label id="albumSkipChoiceLabel" textAlignment="CENTER"/>
     </children>
 </VBox>
 

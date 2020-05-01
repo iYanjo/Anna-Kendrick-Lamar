@@ -1,5 +1,6 @@
 package ui;
 
+import data.Configs;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -32,7 +33,11 @@ public class Main extends Application {
         Parent root = fxmlLoader.load();
         primaryStage.setTitle("Anna Kendrick Lamar");
         primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/anna bae icon.png")));
-        primaryStage.setScene(new Scene(root, 1000, 1000));
+        Scene scene = new Scene(root, 1000, 1000);
+        if(Configs.style == Configs.Style.DARCULA) {
+            scene.getStylesheets().add(getClass().getResource("/css/darcula.css").toExternalForm());
+        }
+        primaryStage.setScene(scene);
         primaryStage.show();
         signinScreenController.setupSigninScene(primaryStage, root);
     }

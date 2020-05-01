@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -12,16 +13,31 @@
       <RowConstraints />
     </rowConstraints>
     <children>
-      <Pane prefHeight="200.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+          <padding>
+              <Insets bottom="20" left="20" right="20" top="20" />
+          </padding>
          <children>
-                <Label text="Enter your name" />
-            <TextField id="nameTextField" fx:id="nameTextField" layoutX="13.0" layoutY="44.0" prefHeight="25.0" prefWidth="349.0" promptText="Use the same name if you've done this before." />
-         </children></Pane>
-        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                <Label text="Enter your name: " HBox.hgrow="NEVER" />
+            <TextField id="nameTextField" fx:id="nameTextField" promptText="Use the same name if you've done this before." HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
             <children>
-                <Button fx:id="firstTimeButton" mnemonicParsing="false" text="First time (this creates you a spreadsheet)" />
-            <Button fx:id="nthTimeButton" layoutX="300.0" mnemonicParsing="false" text="I've done this before (supply the same spreadsheet)" />
+                <!--
+                <JFXButton fx:id="firstTimeButton" buttonType="RAISED" mnemonicParsing="false" text="First time (this creates you a spreadsheet)" />
+                <JFXButton fx:id="nthTimeButton" buttonType="RAISED" layoutX="300.0" mnemonicParsing="false" text="I've done this before (supply the same spreadsheet)" />
+                -->
+                <Button fx:id="firstTimeButton" alignment="CENTER" mnemonicParsing="false" text="First time (This creates you a spreadsheet)">
+               <VBox.margin>
+                  <Insets bottom="25.0" top="25.0" />
+               </VBox.margin></Button>
+                <Button fx:id="nthTimeButton" layoutX="300.0" mnemonicParsing="false" text="I've done this before (Supply the same spreadsheet)">
+               <VBox.margin>
+                  <Insets bottom="25.0" top="25.0" />
+               </VBox.margin></Button>
+
             </children>
-        </Pane>
+        </VBox>
     </children>
 </GridPane>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;">
+    <VBox spacing="10">
+        <Label text="Left/right arrows to which album wins each matchup"/>
+        <Label text="Down arrow to skip matchup"/>
+        <Label text="Up arrow to go to previous matchup"/>
+        <Label text="Made by John Yan"/>
+        <Label text="With love, for Anna"/>
+    </VBox>
+</AnchorPane>

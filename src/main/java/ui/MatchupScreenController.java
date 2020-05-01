@@ -11,16 +11,22 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Popup;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class MatchupScreenController {
 
@@ -40,13 +46,14 @@ public class MatchupScreenController {
     private Button albumLeftChoiceButton;
     private Button albumSkipChoiceButton;
     private Button albumRightChoiceButton;
+    private Label albumLeftChoiceLabel;
+    private Label albumSkipChoiceLabel;
+    private Label albumRightChoiceLabel;
     private Button helpToolbarButton;
     private Button historyToolbarButton;
     private Button saveToolbarButton;
 
-    //todo: make a history/changelog users can see. double-click on a matchup to revisit
-    //todo: have text at the bottom. telling either previous score, or shortcuts/hotkeys
-    public MatchupScreenController(final Stage primaryStage, Parent root, ExcelHelper excelHelper) {
+    public MatchupScreenController(final Stage primaryStage, Parent root, Scene scene, ExcelHelper excelHelper) {
         // build references to all views
         mPrimaryStage = primaryStage;
         mExcelHelper = excelHelper;
@@ -57,6 +64,9 @@ public class MatchupScreenController {
         albumLeftChoiceButton = (Button) root.lookup("#albumLeftChoiceButton");
         albumRightChoiceButton = (Button) root.lookup("#albumRightChoiceButton");
         albumSkipChoiceButton = (Button) root.lookup("#albumSkipChoiceButton");
+        albumLeftChoiceLabel = (Label) root.lookup("#albumLeftChoiceLabel");
+        albumRightChoiceLabel = (Label) root.lookup("#albumRightChoiceLabel");
+        albumSkipChoiceLabel = (Label) root.lookup("#albumSkipChoiceLabel");
 
         albumLeftChoiceButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -86,9 +96,13 @@ public class MatchupScreenController {
                     recordRightAlbumWin();
                 } else if(event.getCode() == KeyCode.DOWN) {
                     recordAlbumSkip();
+                } else if(event.getCode() == KeyCode.UP) {
+                    setupPrevMatchup();
                 }
             }
         });
+
+        mPrimaryStage.getScene().getWindow().addEventFilter(WindowEvent.WINDOW_CLOSE_REQUEST, this::closeWindowEvent);
 
         //toolbar buttons
         helpToolbarButton = (Button) root.lookup("#helpToolbarButton");
@@ -97,13 +111,14 @@ public class MatchupScreenController {
         helpToolbarButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                // todo: display help dialog
+                openHelpPopup();
             }
         });
         historyToolbarButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 // todo: display history dialog
+                openHistoryPopup();
             }
         });
         saveToolbarButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -152,8 +167,38 @@ public class MatchupScreenController {
             //todo: it's over
             return;
         }
+        setupCurrentMatchup();
+    }
+
+    private synchronized void setupPrevMatchup() {
+        Matchup matchup =  mExcelHelper.getPrevMatchup();
+        if(matchup == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("No previous matchups");
+            alert.setContentText(String.format("This is the first matchup"));
+            alert.initOwner(mPrimaryStage.getOwner());
+            Optional<ButtonType> res = alert.showAndWait();
+            return;
+        }
+        mCurrentMatchup = matchup;
+        setupCurrentMatchup();
+    }
+
+    private synchronized void setupCurrentMatchup() {
         setupAlbumDisplay(leftAlbumDisplay, mCurrentMatchup.getAlbum1()-1);
         setupAlbumDisplay(rightAlbumDisplay, mCurrentMatchup.getAlbum2()-1);
+
+        albumLeftChoiceLabel.setText("");
+        albumSkipChoiceLabel.setText("");
+        albumRightChoiceLabel.setText("");
+
+        if(mCurrentMatchup.getResult() == Constants.RESULT_SKIPPED) {
+            albumSkipChoiceLabel.setText("This is your current choice");
+        } else if(mCurrentMatchup.getResult() == mCurrentMatchup.getAlbum1()) {
+            albumLeftChoiceLabel.setText("This is your current choice");
+        } if(mCurrentMatchup.getResult() == mCurrentMatchup.getAlbum2()) {
+            albumRightChoiceLabel.setText("This is your current choice");
+        }
     }
 
     private void setupAlbumDisplay(VBox albumDisplay, int albumIndex) {
@@ -174,11 +219,10 @@ public class MatchupScreenController {
         albumTrack.setText("Representative Track: " + album.getRepresentativeTrack());
         albumYear.setText("Year: " + album.getYear());
 
-        setupAlbumScoreForDisplay(albumDisplay, "#album_rym_score", "RYM Score", album.getRymScore());
+        setupAlbumScoreForDisplay(albumDisplay, "#album_adjrym_score", "Adj. RYM Score", album.getAdjRymScore());
         setupAlbumScoreForDisplay(albumDisplay, "#album_p4k_score", "P4K Score", album.getP4kScore());
         setupAlbumScoreForDisplay(albumDisplay, "#album_fantano_score", "Fantano Score", album.getFantanoScore());
-        setupAlbumScoreForDisplay(albumDisplay, "#album_adjrym_score", "Adj. RYM Score", album.getAdjRymScore());
-        setupAlbumScoreForDisplay(albumDisplay, "#album_aggregate_score", "Aggregate Score", album.getAggregateScore());
+        setupAggregateAlbumScoreForDisplay(albumDisplay, album.getAggregateScore());
     }
 
     private void setupAlbumScoreForDisplay(Node root, String identifier, String scoreTypeString, String scoreValueString) {
@@ -190,5 +234,60 @@ public class MatchupScreenController {
             scoreValueString = scoreValueString.substring(0, 5);
         }
         scoreValue.setText(scoreValueString);
+    }
+
+    private void setupAggregateAlbumScoreForDisplay(Node root, String scoreValueString) {
+        HBox albumScoreNode = (HBox) root.lookup("#album_aggregate_score");
+        Label scoreType = (Label) albumScoreNode.lookup("#score_type");
+        Label scoreValue = (Label) albumScoreNode.lookup("#score_value");
+        scoreType.setText("Aggregate Score: ");
+        if(scoreValueString.length() > 4) {
+            scoreValueString = scoreValueString.substring(0, 5);
+        }
+        scoreValue.setText(scoreValueString);
+    }
+
+    private void closeWindowEvent(WindowEvent event) {
+        if(!mExcelHelper.hasUnsavedChanges()) {
+            return;
+        }
+
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.getButtonTypes().remove(ButtonType.OK);
+        alert.getButtonTypes().add(ButtonType.CANCEL);
+        alert.getButtonTypes().add(ButtonType.YES);
+        alert.setTitle("Quit application");
+        alert.setContentText(String.format("Detected unsaved changes. Continue closing?"));
+        alert.initOwner(mPrimaryStage.getOwner());
+        Optional<ButtonType> res = alert.showAndWait();
+
+        if(res.isPresent()) {
+            if(res.get().equals(ButtonType.CANCEL))
+                event.consume();
+        }
+    }
+
+    private void openHelpPopup() {
+        Popup popup = new Popup();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/misc/help_popup.fxml"));
+        try {
+            popup.getContent().add((Parent)loader.load());
+            popup.setAutoHide(true);
+            popup.show(mPrimaryStage);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void openHistoryPopup() {
+        Popup popup = new Popup();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/misc/history_popup.fxml"));
+        try {
+            popup.getContent().add((Parent)loader.load());
+            popup.setAutoHide(true);
+            popup.show(mPrimaryStage);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

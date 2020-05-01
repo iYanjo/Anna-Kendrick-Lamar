@@ -15,13 +15,13 @@
             <Button fx:id="saveToolbarButton" text="Save Changes"/>
          </items>
       </ToolBar>
-      <HBox prefHeight="700.0" prefWidth="1000.0" VBox.vgrow="ALWAYS">
+      <HBox prefHeight="740.0" prefWidth="1000.0" VBox.vgrow="ALWAYS">
          <children>
             <fx:include fx:id="leftAlbumDisplay" source="album_matchup_display.fxml"/>
             <fx:include fx:id="rightAlbumDisplay" source="album_matchup_display.fxml"/>
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="1000.0" VBox.vgrow="SOMETIMES">
+      <HBox prefHeight="80.0" prefWidth="1000.0" VBox.vgrow="SOMETIMES">
          <padding>
             <Insets left="50" right="50" />
          </padding>

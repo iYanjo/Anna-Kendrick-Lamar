@@ -1,3 +1,4 @@
+data\Configs$Style.class
 ui\MatchupScreenController$4.class
 ui\MatchupScreenController.class
 ui\SigninScreenController$1.class
@@ -5,6 +6,7 @@ ui\MatchupScreenController$1.class
 ui\Main.class
 data\Constants.class
 data\AlbumArtworkMap.class
+data\Configs.class
 data\Matchup.class
 ui\SigninScreenController$2.class
 ui\MatchupScreenController$5.class
