@@ -7,6 +7,6 @@ public class Configs {
     }
 
     public final static Integer maxAlbums = null;
-    public final static Style style = Style.NONE;
+    public final static Style style = Style.DARCULA;
 
 }

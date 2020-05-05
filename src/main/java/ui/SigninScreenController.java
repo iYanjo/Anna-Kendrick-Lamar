@@ -31,7 +31,8 @@ public class SigninScreenController {
     public SigninScreenController() {
     }
 
-    private static final char[] ILLEGAL_FILENAME_CHARACTERS = { '/', '\n', '\r', '\t', '\0', '\f', '`', '?', '*', '\\', '<', '>', '|', '\"', ':' };
+    private static final char[] ILLEGAL_FILENAME_CHARACTERS = {'/', '\n', '\r', '\t', '\0', '\f', '`', '?', '*', '\\'
+            , '<', '>', '|', '\"', ':'};
 
     public void setupSigninScene(final Stage primaryStage, Parent root) {
         mPrimaryStage = primaryStage;
@@ -40,13 +41,13 @@ public class SigninScreenController {
         firstTimeButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if(getName().isEmpty()) {
+                if (getName().isEmpty()) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Invalid Name");
                     alert.setHeaderText("Can't have empty name");
                     alert.setContentText("Please enter a non-empty name without invalid characters for files");
                     alert.showAndWait();
-                } else if (doesStringContainInvalidFilenameCharacters(getName())){
+                } else if (doesStringContainInvalidFilenameCharacters(getName())) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Invalid Name");
                     alert.setHeaderText("Can't have invalid characters for your name");
@@ -54,7 +55,7 @@ public class SigninScreenController {
                     alert.showAndWait();
                 } else {
                     loadAlbumsSpreadsheet();
-                    if(createMatchupsSpreadsheet(getName())) {
+                    if (createMatchupsSpreadsheet(getName())) {
                         setupMatchupScreen();
                     }
                 }
@@ -71,7 +72,9 @@ public class SigninScreenController {
                         new FileChooser.ExtensionFilter("Choose the Excel from before", "*.xlsx"));
                 File spreadsheetFile = fileChooser.showOpenDialog(mPrimaryStage);
 
-                if(Constants.USE_COMPACT_EXCEL ? excelHelper.getCompactResultsSpreadsheet(spreadsheetFile) : excelHelper.getResultsSpreadsheet(spreadsheetFile)) {
+                if (Constants.USE_COMPACT_EXCEL ? excelHelper.getCompactResultsSpreadsheet(spreadsheetFile) :
+                        excelHelper.getResultsSpreadsheet(
+                                spreadsheetFile)) {
                     setupMatchupScreen();
                 } else {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -85,11 +88,11 @@ public class SigninScreenController {
 
     private boolean doesStringContainInvalidFilenameCharacters(String s) {
         Set<Character> illegalCharacterSet = new HashSet<>();
-        for(char c : ILLEGAL_FILENAME_CHARACTERS) {
+        for (char c : ILLEGAL_FILENAME_CHARACTERS) {
             illegalCharacterSet.add(c);
         }
-        for(int i = 0; i < s.length(); i++) {
-            if(illegalCharacterSet.contains(s.charAt(i))) {
+        for (int i = 0; i < s.length(); i++) {
+            if (illegalCharacterSet.contains(s.charAt(i))) {
                 return true;
             }
         }
@@ -98,7 +101,7 @@ public class SigninScreenController {
 
     private void loadAlbumsSpreadsheet() {
         try {
-            if(!excelHelper.isAlbumsFetched()) {
+            if (!excelHelper.isAlbumsFetched()) {
                 excelHelper.getAlbumsSpreadsheet();
             }
         } catch (IOException e) {
@@ -136,9 +139,7 @@ public class SigninScreenController {
         }
 
         Scene scene = new Scene(root, 1000, 1000);
-        if(Configs.style == Configs.Style.DARCULA) {
-            scene.getStylesheets().add(getClass().getResource("/css/darcula.css").toExternalForm());
-        }
+        CSSHelper.maybeApplyCSS(scene);
         mPrimaryStage.setScene(scene);
         new MatchupScreenController(mPrimaryStage, root, scene, excelHelper);
     }

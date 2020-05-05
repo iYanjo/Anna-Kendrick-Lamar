@@ -1,9 +1,6 @@
 package ui;
 
-import data.Album;
-import data.AlbumArtworkMap;
-import data.Constants;
-import data.Matchup;
+import data.*;
 import excel.ExcelHelper;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -21,6 +18,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -90,13 +88,13 @@ public class MatchupScreenController {
         mPrimaryStage.getScene().setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-                if(event.getCode() == KeyCode.LEFT) {
+                if (event.getCode() == KeyCode.LEFT) {
                     recordLeftAlbumWin();
-                } else if(event.getCode() == KeyCode.RIGHT) {
+                } else if (event.getCode() == KeyCode.RIGHT) {
                     recordRightAlbumWin();
-                } else if(event.getCode() == KeyCode.DOWN) {
+                } else if (event.getCode() == KeyCode.DOWN) {
                     recordAlbumSkip();
-                } else if(event.getCode() == KeyCode.UP) {
+                } else if (event.getCode() == KeyCode.UP) {
                     setupPrevMatchup();
                 }
             }
@@ -124,7 +122,7 @@ public class MatchupScreenController {
         saveToolbarButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if(Constants.USE_COMPACT_EXCEL) {
+                if (Constants.USE_COMPACT_EXCEL) {
                     mExcelHelper.saveCompactResults();
                 } else {
                     mExcelHelper.saveResults();
@@ -152,7 +150,7 @@ public class MatchupScreenController {
 
     private synchronized void setupNextMatchup() {
         mCurrentMatchup = mExcelHelper.getNextMatchup();
-        if(mCurrentMatchup == null) {
+        if (mCurrentMatchup == null) {
             mPrimaryStage.getScene().setOnKeyPressed(null);
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/victory_screen.fxml"));
             fxmlLoader.setController(this);
@@ -171,8 +169,8 @@ public class MatchupScreenController {
     }
 
     private synchronized void setupPrevMatchup() {
-        Matchup matchup =  mExcelHelper.getPrevMatchup();
-        if(matchup == null) {
+        Matchup matchup = mExcelHelper.getPrevMatchup();
+        if (matchup == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("No previous matchups");
             alert.setContentText(String.format("This is the first matchup"));
@@ -185,18 +183,19 @@ public class MatchupScreenController {
     }
 
     private synchronized void setupCurrentMatchup() {
-        setupAlbumDisplay(leftAlbumDisplay, mCurrentMatchup.getAlbum1()-1);
-        setupAlbumDisplay(rightAlbumDisplay, mCurrentMatchup.getAlbum2()-1);
+        setupAlbumDisplay(leftAlbumDisplay, mCurrentMatchup.getAlbum1() - 1);
+        setupAlbumDisplay(rightAlbumDisplay, mCurrentMatchup.getAlbum2() - 1);
 
         albumLeftChoiceLabel.setText("");
         albumSkipChoiceLabel.setText("");
         albumRightChoiceLabel.setText("");
 
-        if(mCurrentMatchup.getResult() == Constants.RESULT_SKIPPED) {
+        if (mCurrentMatchup.getResult() == Constants.RESULT_SKIPPED) {
             albumSkipChoiceLabel.setText("This is your current choice");
-        } else if(mCurrentMatchup.getResult() == mCurrentMatchup.getAlbum1()) {
+        } else if (mCurrentMatchup.getResult() == mCurrentMatchup.getAlbum1()) {
             albumLeftChoiceLabel.setText("This is your current choice");
-        } if(mCurrentMatchup.getResult() == mCurrentMatchup.getAlbum2()) {
+        }
+        if (mCurrentMatchup.getResult() == mCurrentMatchup.getAlbum2()) {
             albumRightChoiceLabel.setText("This is your current choice");
         }
     }
@@ -225,12 +224,13 @@ public class MatchupScreenController {
         setupAggregateAlbumScoreForDisplay(albumDisplay, album.getAggregateScore());
     }
 
-    private void setupAlbumScoreForDisplay(Node root, String identifier, String scoreTypeString, String scoreValueString) {
+    private void setupAlbumScoreForDisplay(Node root, String identifier, String scoreTypeString,
+            String scoreValueString) {
         VBox albumScoreNode = (VBox) root.lookup(identifier);
         Label scoreType = (Label) albumScoreNode.lookup("#score_type");
         Label scoreValue = (Label) albumScoreNode.lookup("#score_value");
         scoreType.setText(scoreTypeString);
-        if(scoreValueString.length() > 4) {
+        if (scoreValueString.length() > 4) {
             scoreValueString = scoreValueString.substring(0, 5);
         }
         scoreValue.setText(scoreValueString);
@@ -241,14 +241,14 @@ public class MatchupScreenController {
         Label scoreType = (Label) albumScoreNode.lookup("#score_type");
         Label scoreValue = (Label) albumScoreNode.lookup("#score_value");
         scoreType.setText("Aggregate Score: ");
-        if(scoreValueString.length() > 4) {
+        if (scoreValueString.length() > 4) {
             scoreValueString = scoreValueString.substring(0, 5);
         }
         scoreValue.setText(scoreValueString);
     }
 
     private void closeWindowEvent(WindowEvent event) {
-        if(!mExcelHelper.hasUnsavedChanges()) {
+        if (!mExcelHelper.hasUnsavedChanges()) {
             return;
         }
 
@@ -261,33 +261,63 @@ public class MatchupScreenController {
         alert.initOwner(mPrimaryStage.getOwner());
         Optional<ButtonType> res = alert.showAndWait();
 
-        if(res.isPresent()) {
-            if(res.get().equals(ButtonType.CANCEL))
+        if (res.isPresent()) {
+            if (res.get().equals(ButtonType.CANCEL))
                 event.consume();
         }
     }
 
     private void openHelpPopup() {
-        Popup popup = new Popup();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/misc/help_popup.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/misc/help_popup.fxml"));
+        fxmlLoader.setController(this);
+        Parent root = null;
         try {
-            popup.getContent().add((Parent)loader.load());
-            popup.setAutoHide(true);
-            popup.show(mPrimaryStage);
+            root = fxmlLoader.load();
         } catch (IOException e) {
             e.printStackTrace();
+            ReadErrorAlert readErrorAlert = new ReadErrorAlert();
+            readErrorAlert.display(e);
         }
+
+        if (root == null) {
+            return;
+        }
+        final Stage helpStage = new Stage();
+        helpStage.initModality(Modality.APPLICATION_MODAL);
+        helpStage.initOwner(mPrimaryStage);
+        helpStage.setTitle("T R U E R A G E");
+        helpStage.getIcons().add(new Image(getClass().getResourceAsStream("/ganon_icon.png")));
+
+        Scene dialogScene = new Scene(root, 600, 600);
+        CSSHelper.maybeApplyCSS(dialogScene);
+        helpStage.setScene(dialogScene);
+        helpStage.show();
     }
 
     private void openHistoryPopup() {
-        Popup popup = new Popup();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/misc/history_popup.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/misc/history_popup.fxml"));
+        fxmlLoader.setController(new HistoryPopupController());
+        Parent root = null;
         try {
-            popup.getContent().add((Parent)loader.load());
-            popup.setAutoHide(true);
-            popup.show(mPrimaryStage);
+            root = fxmlLoader.load();
         } catch (IOException e) {
             e.printStackTrace();
+            ReadErrorAlert readErrorAlert = new ReadErrorAlert();
+            readErrorAlert.display(e);
         }
+
+        if (root == null) {
+            return;
+        }
+        final Stage helpStage = new Stage();
+        helpStage.initModality(Modality.APPLICATION_MODAL);
+        helpStage.initOwner(mPrimaryStage);
+        helpStage.setTitle("CHAOS REIGNS");
+        helpStage.getIcons().add(new Image(getClass().getResourceAsStream("/conor_icon.png")));
+
+        Scene dialogScene = new Scene(root, 600, 600);
+        CSSHelper.maybeApplyCSS(dialogScene);
+        helpStage.setScene(dialogScene);
+        helpStage.show();
     }
 }

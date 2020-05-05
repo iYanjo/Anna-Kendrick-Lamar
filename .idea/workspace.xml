@@ -2,39 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32405942-cc24-41d3-b8cd-78571b54ba51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/Configs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/darcula.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/album_aggregate_score_text.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/darcula.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/misc/help_popup.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/misc/history_popup.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/CSSHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/HistoryPopupController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/conor_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ganon_icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/excel/ExcelHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/excel/ExcelHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/Configs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/Configs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/MatchupScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/MatchupScreenController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/SigninScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/SigninScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/album_left_choice_button.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/album_left_choice_button.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/album_matchup_display.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/album_matchup_display.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/album_right_choice_button.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/album_right_choice_button.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/album_score_text.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/album_score_text.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/album_skip_choice_button.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/album_skip_choice_button.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/initial_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/initial_screen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/matchup_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/matchup_screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/album_left_choice_button.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/album_left_choice_button.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/album_matchup_display.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/album_matchup_display.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/album_right_choice_button.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/album_right_choice_button.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/album_score_text.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/album_score_text.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/album_skip_choice_button.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/album_skip_choice_button.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/Album.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/Album.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/AlbumArtworkMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/AlbumArtworkMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/Matchup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/Matchup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/excel/ExcelHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/excel/ExcelHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/initial_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/initial_screen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/misc/help_popup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/misc/help_popup.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/misc/history_popup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/misc/history_popup.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/Configs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/Configs.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/matchup_screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/matchup_screen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/misc/help_popup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/misc/help_popup.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/misc/history_popup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/misc/history_popup.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/MatchupScreenController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/MatchupScreenController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/MatchupScreenController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/MatchupScreenController$2.class" afterDir="false" />
@@ -44,12 +28,9 @@
       <change beforePath="$PROJECT_DIR$/target/classes/ui/MatchupScreenController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/MatchupScreenController$6.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/MatchupScreenController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/MatchupScreenController$7.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/MatchupScreenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/MatchupScreenController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/ReadErrorAlert.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/ReadErrorAlert.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/SigninScreenController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/SigninScreenController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/SigninScreenController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/SigninScreenController$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/SigninScreenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/SigninScreenController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,8 +40,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -86,26 +67,26 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/misc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.41149426" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.XML" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jyan1\Documents\GitHub\Anna-Kendrick-Lamar\src\main\java\ui" />
+      <recent name="C:\Users\jyan1\Documents\GitHub\Anna-Kendrick-Lamar\src\main\resources\css" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\jyan1\Documents\GitHub\Anna-Kendrick-Lamar\src\main\resources\misc" />
       <recent name="C:\Users\jyan1\Documents\GitHub\Anna-Kendrick-Lamar\src\main\resources" />
+      <recent name="C:\Users\jyan1\Documents\GitHub\Anna-Kendrick-Lamar\src\main\resources\misc" />
       <recent name="C:\Users\jyan1\IdeaProjects\Anna Kendrick Lamar\src\main\resources" />
       <recent name="C:\Users\jyan1\IdeaProjects\Anna Kendrick Lamar\src\main\java" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\jyan1\Documents\GitHub\Anna-Kendrick-Lamar\src\main\java\ui" />
-      <recent name="C:\Users\jyan1\Documents\GitHub\Anna-Kendrick-Lamar\src\main\resources\css" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -127,6 +108,10 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="jfoenix-8.0.9.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$MAVEN_REPOSITORY$/com/jfoenix/jfoenix/8.0.9/jfoenix-8.0.9.jar!/" />
+      <method v="2" />
     </configuration>
     <configuration name="Anna Kendrick Lamar" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
@@ -154,7 +139,13 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Maven.Anna Kendrick Lamar" />
+      <item itemvalue="JAR Application.jfoenix-8.0.9.jar" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JAR Application.jfoenix-8.0.9.jar" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -202,22 +193,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586599414450" />
-    <state width="2517" height="492" key="GridCell.Tab.0.bottom" timestamp="1588326950448">
+    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1588669796812">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="492" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1588326950448" />
-    <state width="2517" height="492" key="GridCell.Tab.0.center" timestamp="1588326950448">
+    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1588669796812" />
+    <state width="2517" height="425" key="GridCell.Tab.0.bottom" timestamp="1588670425468">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="492" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1588326950448" />
-    <state width="2517" height="492" key="GridCell.Tab.0.left" timestamp="1588326950447">
+    <state width="2517" height="425" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1588670425468" />
+    <state width="2517" height="425" key="GridCell.Tab.0.center" timestamp="1588670425468">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="492" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1588326950447" />
-    <state width="2517" height="492" key="GridCell.Tab.0.right" timestamp="1588326950448">
+    <state width="2517" height="425" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1588670425468" />
+    <state width="2517" height="425" key="GridCell.Tab.0.left" timestamp="1588670425468">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="492" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588326950448" />
+    <state width="2517" height="425" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1588670425468" />
+    <state width="2517" height="425" key="GridCell.Tab.0.right" timestamp="1588670425468">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="425" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588670425468" />
     <state width="2517" height="492" key="GridCell.Tab.1.bottom" timestamp="1588326950448">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -234,21 +229,29 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2517" height="492" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588326950448" />
-    <state x="760" y="274" key="SettingsEditor" timestamp="1588322395609">
+    <state x="760" y="274" key="SettingsEditor" timestamp="1588668931525">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="760" y="274" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1588322395609" />
+    <state x="760" y="274" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1588668931525" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1588668207012">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.2560.1400@0.0.2560.1400" timestamp="1588668207012" />
     <state x="976" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1588327138626">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="976" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1588327138626" />
-    <state x="936" y="330" width="672" height="677" key="run.anything.popup" timestamp="1588326025353">
+    <state x="976" y="298" width="607" height="804" key="find.popup" timestamp="1588668811113">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="936" y="330" width="672" height="677" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1588326025353" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1588326498984">
+    <state x="976" y="298" width="607" height="804" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1588668811113" />
+    <state x="936" y="330" width="672" height="677" key="run.anything.popup" timestamp="1588669732649">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1588326498984" />
+    <state x="936" y="330" width="672" height="677" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1588669732649" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1588669724738">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1588669724738" />
   </component>
 </project>
