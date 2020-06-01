@@ -46,12 +46,14 @@ public class SigninScreenController {
                     alert.setTitle("Invalid Name");
                     alert.setHeaderText("Can't have empty name");
                     alert.setContentText("Please enter a non-empty name without invalid characters for files");
+                    CSSHelper.maybeApplyCSS(alert.getDialogPane());
                     alert.showAndWait();
                 } else if (doesStringContainInvalidFilenameCharacters(getName())) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Invalid Name");
                     alert.setHeaderText("Can't have invalid characters for your name");
                     alert.setContentText("Please enter a non-empty name without invalid characters (?, *, `, /, etc)");
+                    CSSHelper.maybeApplyCSS(alert.getDialogPane());
                     alert.showAndWait();
                 } else {
                     loadAlbumsSpreadsheet();
@@ -80,6 +82,7 @@ public class SigninScreenController {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Invalid File");
                     alert.setContentText("Please choose a valid results spreadsheet");
+                    CSSHelper.maybeApplyCSS(alert.getDialogPane());
                     alert.showAndWait();
                 }
             }

@@ -4,10 +4,17 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
 <VBox alignment="CENTER" prefWidth="300" HBox.hgrow="SOMETIMES">
     <children>
+        <!--
         <Label text="Right Album Wins" textAlignment="CENTER" />
         <Button id="albumRightChoiceButton" text="Right"/>
+        -->
+        <JFXButton id="albumRightChoiceButton"
+                   buttonType="RAISED"
+                   text="Right"
+                   style="-fx-font-size: 25"/>
         <Label id="albumRightChoiceLabel" textAlignment="CENTER"/>
     </children>
 </VBox>

@@ -1,13 +1,20 @@
 /* default setting */
-.root {
-    -darcula-background-bright: #4b6eaf;
-    -darcula-background: #3c3f41; /*60 63 65*/
-    -darcula-background-dark: #313335; /*49 51 53*/
-    -darcula-background-darkest: #2b2b2b; /*43 43 43*/
+@font-face {
+        font-family: 'Anna';
+        src: url('yuglyfont.TTF');
+}
 
-    -darcula-text: #bbbbbb;
-    -darcula-text-disabled: #777777;
-    -darcula-text-highlight-background: #4b6baf;
+.root {
+    -darcula-background-bright: #fff3f5;
+    -darcula-background: #ffdae0;
+    -darcula-background-dark: #ffc0cb;
+    -darcula-background-darkest: #ffa7b6;
+
+    -darcula-text: #ffff00;
+    -darcula-text-disabled: #bbbb00;
+    -darcula-text-highlight-background: #666600;
+
+    -fx-font-family: 'Anna'
 }
 
 .label:disabled,
@@ -53,19 +60,19 @@
 }
 
 .text {
-    -fx-fill: #bbbbbb;
+    -fx-fill: #ffff00;
 }
 
 .text:disabled {
-    -fx-fill: #777777;
+    -fx-fill: #bbbb00;
 }
 
 .hyperlink {
-    -fx-text-fill: #589df6; /*88 157 246*/
+    -fx-text-fill: #666600; /*88 157 246*/
 }
 
 .hyperlink .text {
-    -fx-fill: #589df6; /*88 157 246*/
+    -fx-fill: #666600; /*88 157 246*/
 }
 
 .hyperlink:visited .text {
@@ -73,17 +80,17 @@
 }
 
 .hyperlink:hover .text {
-    -fx-fill: #52639a; /*82 99 155*/
+    -fx-fill: #666600; /*82 99 155*/
     -fx-underline: true;
 }
 
 .hyperlink:disabled .text {
-    -fx-fill: #777777; /*82 99 155*/
+    -fx-fill: #bbbb00; /*82 99 155*/
     -fx-underline: true;
 }
 
 .hyperlink:armed .text {
-    -fx-fill: #bc6f25; /*186 111 37*/
+    -fx-fill: #666600; /*186 111 37*/
     -fx-underline: true;
 }
 
@@ -93,10 +100,10 @@
 
 .text-field,
 .text-area {
-    -fx-text-fill: #bbbbbb;
-    -fx-prompt-text-fill: #bbbbbb;
-    -fx-highlight-fill: #4b6baf;
-    -fx-highlight-text-fill: #bbbbbb;
+    -fx-text-fill: #ffff00;
+    -fx-prompt-text-fill: #ffff00;
+    -fx-highlight-fill: #666600;
+    -fx-highlight-text-fill: #ffff00;
 }
 
 .text-field:disabled,
@@ -107,8 +114,8 @@
 .color-picker:disabled,
 .date-picker:disabled,
 .menu-button:disabled {
-    -fx-text-fill: #777777;
-    -fx-prompt-text-fill: #777777;
+    -fx-text-fill: #bbbb00;
+    -fx-prompt-text-fill: #bbbb00;
 }
 
 /* dacular component border */
@@ -163,12 +170,12 @@ StackPane,
 .tool-bar> .container,
 .tab-pane> .tab-header-area> .tab-header-background,
 .split-pane {
-    -fx-background-color: #3c3f41;
+    -fx-background-color: #ffdae0;
 }
 
 .text-field,
 .text-area {
-    -fx-background-color: #45494a;
+    -fx-background-color: #ffdae0;
 }
 
 .text-field:disabled,
@@ -186,12 +193,12 @@ StackPane,
 .split-menu-button,
 .color-picker,
 .menu-button {
-    -fx-background-color: linear-gradient(to bottom, #555a5c, #414648);
+    -fx-background-color: linear-gradient(to bottom, #ff74ac, #ffffff);
     -fx-background-insets: 0;
 }
 
 .button:default {
-    -fx-background-color: linear-gradient(to bottom, #384f6b, #233143);
+    -fx-background-color: linear-gradient(to bottom, #ff74ac, #ffffff);
 }
 
 /* right button */
@@ -235,28 +242,6 @@ StackPane,
     -fx-border-color: transparent;
     -fx-background-radius: 3px 0 0 3px;
     -fx-border-radius: 3px 0 0 3px;
-}
-
-/* armed */
-.button:armed,
-.toggle-button:armed,
-.radio-button:armed> .radio,
-.check-box:armed> .box,
-.combo-box:armed,
-.combo-box:showing,
-.choice-box:pressed,
-.choice-box:showing,
-.split-menu-button:armed,
-.color-picker:armed,
-.menu-button:armed {
-    -fx-border-color: #60afff32, #60afff64, #60afffb4, #60afff78, #60afff46;
-    -fx-border-width: 1, 1, 1, 1, 1;
-    -fx-border-radius: 3;
-    -fx-border-insets: 4, 3, 2, 1, 0;
-    /*-fx-border-color: linear-gradient(to top, #60afff64, #60afffb4, #60afff78, #60afff46) linear-gradient(to right, #60afff64, #60afffb4, #60afff78, #60afff46) linear-gradient(to bottom, #60afff64, #60afffb4, #60afff78, #60afff46) linear-gradient(to left, #60afff64, #60afffb4, #60afff78, #60afff46);
-    -fx-border-width: 2px;
-    -fx-border-insets: -1px;*/
-    /*linear-gradient(to top, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to right, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to bottom, #60afff32, #60afff82, #60afff46, #60afff14) linear-gradient(to left, #60afff32, #60afff82, #60afff46, #60afff14);*/
 }
 
 .separator:vertical> .line {
@@ -625,4 +610,48 @@ StackPane,
     -fx-background-color: linear-gradient(to bottom, #434f60, #414c5d);
     -fx-border-color: #4b4b4b transparent #2a313c transparent;
     -fx-border-width: 1 0 1 0;
+}
+
+/*dialog-pane*/
+/*
+.dialog-pane> .content {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.dialog-pane> .title {
+    -fx-background-color: linear-gradient(to bottom, #3b3e40, #383b3c);
+    -fx-border-color: #4b4b4b transparent #242627 transparent;
+    -fx-border-width: 1 0 1 0;
+}
+
+.dialog-pane:focused> .title {
+    -fx-background-color: linear-gradient(to bottom, #434f60, #414c5d);
+    -fx-border-color: #4b4b4b transparent #2a313c transparent;
+    -fx-border-width: 1 0 1 0;
+}
+*/
+.dialog > .dialog-pane {
+    -fx-background-color: greenyellow;
+}
+
+.dialog > .dialog-pane > .button-bar {
+    -fx-font-size: 24px;
+    -fx-background-color: indianred;
+    -fx-font-family: "Andalus";
+}
+
+.dialog > .dialog-pane > .content.label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-fill: blue;
+}
+
+.dialog:header > .dialog-pane .header-panel {
+    -fx-background-color: cadetblue;
+    -fx-font-style: italic;
+}
+
+.alert.confirmation.dialog-pane {
+    -fx-graphic: url("lock24.png");
 }

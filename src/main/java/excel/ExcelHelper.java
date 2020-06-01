@@ -11,6 +11,8 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.jetbrains.annotations.Nullable;
+import ui.CSSHelper;
+import ui.ReadErrorAlert;
 
 import java.io.*;
 import java.util.*;
@@ -122,6 +124,7 @@ public class ExcelHelper {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error while creating results spreadsheet");
             alert.setContentText(e.toString());
+            CSSHelper.maybeApplyCSS(alert.getDialogPane());
             alert.showAndWait();
             return false;
         }
@@ -137,8 +140,8 @@ public class ExcelHelper {
         }
 
         matchupsList = createMatchupsList();
-
         Workbook workbook = new XSSFWorkbook();
+        workbook.createSheet("albums_info");
         resultsSheet = workbook.createSheet(name + "_albums_results");
 
         //header
@@ -178,8 +181,8 @@ public class ExcelHelper {
         }
 
         matchupsList = createMatchupsList();
-
         Workbook workbook = new XSSFWorkbook();
+        workbook.createSheet("albums_info");
         resultsSheet = workbook.createSheet(name + "_albums_results");
 
         //header
@@ -247,7 +250,7 @@ public class ExcelHelper {
             resultsFile = file;
             FileInputStream excelFile = new FileInputStream(file);
             Workbook matchupWorkbook = new XSSFWorkbook(excelFile);
-            resultsSheet = matchupWorkbook.getSheetAt(0);
+            resultsSheet = matchupWorkbook.getSheetAt(1);
 
             final int matchupCount = (albumCount * (albumCount-1))/2;
             matchupsList = new ArrayList<>(matchupCount);
@@ -290,8 +293,16 @@ public class ExcelHelper {
             resultsFile = file;
             FileInputStream excelFile = new FileInputStream(file);
             Workbook matchupWorkbook = new XSSFWorkbook(excelFile);
-            resultsSheet = matchupWorkbook.getSheetAt(0);
-            metadataSheet = matchupWorkbook.getSheetAt(1);
+            if(matchupWorkbook.getNumberOfSheets() < 3) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle(">:(");
+                alert.setContentText("You're using an old version, Jorge.");
+                CSSHelper.maybeApplyCSS(alert.getDialogPane());
+                alert.showAndWait();
+                System.exit(0);
+            }
+            resultsSheet = matchupWorkbook.getSheetAt(1);
+            metadataSheet = matchupWorkbook.getSheetAt(2);
             rngSeed = (int) metadataSheet.getRow(0).getCell(2).getNumericCellValue();
             lastUnsavedResultIndex = (int) metadataSheet.getRow(0).getCell(4).getNumericCellValue();
             currentMatchupIndex = lastUnsavedResultIndex;
@@ -351,6 +362,7 @@ public class ExcelHelper {
 
 
     public void saveResults() {
+        //todo fix bug where saving results after going back doesn't touch the ones that've been answered past currentMatchupIndex
         for(int i = lastUnsavedResultIndex; i < currentMatchupIndex; i++) {
             resultsSheet.getRow(i + NUM_HEADER_ROWS_IN_MATCHUPS).getCell(4).setCellValue(matchupsList.get(i).getResult());
         }
@@ -373,6 +385,7 @@ public class ExcelHelper {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error while saving results");
                 alert.setContentText("Please save to a valid file");
+                CSSHelper.maybeApplyCSS(alert.getDialogPane());
                 alert.showAndWait();
             }
         } catch (FileNotFoundException e) {
@@ -408,6 +421,7 @@ public class ExcelHelper {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error while saving results");
                 alert.setContentText("Please save to a valid file");
+                CSSHelper.maybeApplyCSS(alert.getDialogPane());
                 alert.showAndWait();
             }
         } catch (FileNotFoundException e) {

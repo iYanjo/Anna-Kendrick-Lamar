@@ -34,6 +34,7 @@ public class Main extends Application {
         primaryStage.setTitle("Anna Kendrick Lamar");
         primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/anna bae icon.png")));
         Scene scene = new Scene(root, 1000, 1000);
+        CSSHelper.maybeLoadYuglyFont();
         CSSHelper.maybeApplyCSS(scene);
         primaryStage.setScene(scene);
         primaryStage.show();

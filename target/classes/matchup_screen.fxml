@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ToolBar?>
+<?import com.jfoenix.controls.JFXButton?>
 <VBox maxHeight="-Infinity"
       maxWidth="-Infinity"
       minHeight="-Infinity"
@@ -17,9 +18,23 @@
         <ToolBar prefHeight="40.0" prefWidth="1000.0" VBox.vgrow="NEVER">
             <items>
                 <Pane HBox.hgrow="ALWAYS"/>
+                <!--
                 <Button fx:id="helpToolbarButton" text="Show Help"/>
                 <Button fx:id="historyToolbarButton" text="See History"/>
                 <Button fx:id="saveToolbarButton" text="Save Changes"/>
+                -->
+                <JFXButton id="helpToolbarButton"
+                           buttonType="RAISED"
+                           text="Show Help"
+                           style="-fx-font-size: 15"/>
+                <JFXButton id="historyToolbarButton"
+                           buttonType="RAISED"
+                           text="See History"
+                           style="-fx-font-size: 15"/>
+                <JFXButton id="saveToolbarButton"
+                           buttonType="RAISED"
+                           text="Save Changes"
+                           style="-fx-font-size: 15"/>
             </items>
         </ToolBar>
         <HBox prefHeight="740.0" prefWidth="1000.0" VBox.vgrow="ALWAYS">

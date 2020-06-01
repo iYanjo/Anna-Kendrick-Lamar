@@ -46,6 +46,7 @@ public class ReadErrorAlert {
         // Set expandable Exception into the dialog pane.
         alert.getDialogPane().setExpandableContent(expContent);
 
+        CSSHelper.maybeApplyCSS(alert.getDialogPane());
         alert.showAndWait();
     }
 

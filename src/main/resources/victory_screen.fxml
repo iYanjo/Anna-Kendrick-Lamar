@@ -3,8 +3,20 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="you're done!" wrappingWidth="1005.697265625" textAlignment="CENTER"/>
-   </children>
+<VBox alignment="CENTER"
+      maxHeight="-Infinity"
+      maxWidth="-Infinity"
+      minHeight="-Infinity"
+      minWidth="-Infinity"
+      prefHeight="1000.0"
+      prefWidth="1000.0"
+      xmlns="http://javafx.com/javafx/10.0.2-internal"
+      xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Text strokeType="OUTSIDE"
+              strokeWidth="0.0"
+              text="you're done!"
+              wrappingWidth="1005.697265625"
+              textAlignment="CENTER"/>
+    </children>
 </VBox>

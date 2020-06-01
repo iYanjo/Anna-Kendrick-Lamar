@@ -18,8 +18,9 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Modality;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -50,6 +51,11 @@ public class MatchupScreenController {
     private Button helpToolbarButton;
     private Button historyToolbarButton;
     private Button saveToolbarButton;
+
+    //anna
+    private float mVolume = 0;
+    private MediaPlayer mMediaPlayer;
+
 
     public MatchupScreenController(final Stage primaryStage, Parent root, Scene scene, ExcelHelper excelHelper) {
         // build references to all views
@@ -95,7 +101,7 @@ public class MatchupScreenController {
                 } else if (event.getCode() == KeyCode.DOWN) {
                     recordAlbumSkip();
                 } else if (event.getCode() == KeyCode.UP) {
-                    setupPrevMatchup();
+                    loadPrevMatchup();
                 }
             }
         });
@@ -130,25 +136,33 @@ public class MatchupScreenController {
             }
         });
 
-        setupNextMatchup();
+        loadNextMatchup();
+
+        if(Configs.style == Configs.Style.ANNA) {
+            Media media = new Media(getClass().getResource("/pitch_perfect_audition.mp3").toExternalForm());
+            mMediaPlayer = new MediaPlayer(media);
+            mMediaPlayer.setAutoPlay(true);
+            mMediaPlayer.setVolume(mVolume);
+            mMediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+        }
     }
 
     private synchronized void recordLeftAlbumWin() {
         mExcelHelper.setResult(mCurrentMatchup.getAlbum1());
-        setupNextMatchup();
+        loadNextMatchup();
     }
 
     private synchronized void recordRightAlbumWin() {
         mExcelHelper.setResult(mCurrentMatchup.getAlbum2());
-        setupNextMatchup();
+        loadNextMatchup();
     }
 
     private synchronized void recordAlbumSkip() {
         mExcelHelper.setResult(Constants.RESULT_SKIPPED);
-        setupNextMatchup();
+        loadNextMatchup();
     }
 
-    private synchronized void setupNextMatchup() {
+    private synchronized void loadNextMatchup() {
         mCurrentMatchup = mExcelHelper.getNextMatchup();
         if (mCurrentMatchup == null) {
             mPrimaryStage.getScene().setOnKeyPressed(null);
@@ -166,20 +180,37 @@ public class MatchupScreenController {
             return;
         }
         setupCurrentMatchup();
+        maybeDoAnnaStuff();
     }
 
-    private synchronized void setupPrevMatchup() {
+    private synchronized void loadPrevMatchup() {
         Matchup matchup = mExcelHelper.getPrevMatchup();
         if (matchup == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("No previous matchups");
             alert.setContentText(String.format("This is the first matchup"));
+            CSSHelper.maybeApplyCSS(alert.getDialogPane());
             alert.initOwner(mPrimaryStage.getOwner());
             Optional<ButtonType> res = alert.showAndWait();
             return;
         }
         mCurrentMatchup = matchup;
         setupCurrentMatchup();
+        maybeDoAnnaStuff();
+    }
+
+    private synchronized void maybeDoAnnaStuff() {
+        //todo expand dong
+        if(Configs.style != Configs.Style.ANNA) {
+            return;
+        }
+
+        if(mMediaPlayer != null && mVolume <= 1) {
+            mVolume += 0.1;
+            mMediaPlayer.setVolume(mVolume);
+        }
+
+
     }
 
     private synchronized void setupCurrentMatchup() {
@@ -258,6 +289,7 @@ public class MatchupScreenController {
         alert.getButtonTypes().add(ButtonType.YES);
         alert.setTitle("Quit application");
         alert.setContentText(String.format("Detected unsaved changes. Continue closing?"));
+        CSSHelper.maybeApplyCSS(alert.getDialogPane());
         alert.initOwner(mPrimaryStage.getOwner());
         Optional<ButtonType> res = alert.showAndWait();
 
@@ -296,7 +328,7 @@ public class MatchupScreenController {
 
     private void openHistoryPopup() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/misc/history_popup.fxml"));
-        fxmlLoader.setController(new HistoryPopupController());
+//        fxmlLoader.setController(new HistoryPopupController());
         Parent root = null;
         try {
             root = fxmlLoader.load();

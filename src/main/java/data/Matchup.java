@@ -1,6 +1,7 @@
 package data;
 
 import javafx.scene.control.Alert;
+import ui.CSSHelper;
 
 public class Matchup {
 
@@ -47,7 +48,9 @@ public class Matchup {
         if(result != album1 && result != album2 && result != Constants.RESULT_SKIPPED) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Invalid result. Tried to log " + result + " as victor of matchup with album1: " + album1 + " and album2: " + album2);
+            CSSHelper.maybeApplyCSS(alert.getDialogPane());
             alert.showAndWait();
+
         }
         this.result = result;
     }

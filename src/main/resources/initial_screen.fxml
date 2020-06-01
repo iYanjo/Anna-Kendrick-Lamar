@@ -4,40 +4,51 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
-    <columnConstraints>
-        <ColumnConstraints prefWidth="600.0" />
-    </columnConstraints>
-    <rowConstraints>
-      <RowConstraints prefHeight="300.0" />
-      <RowConstraints />
-    </rowConstraints>
+<?import java.awt.Font?>
+<?import com.jfoenix.controls.JFXButton?>
+<VBox alignment="center"
+      xmlns="http://javafx.com/javafx/10.0.2-internal"
+      xmlns:fx="http://javafx.com/fxml/1"
+      spacing="50"
+      prefHeight="600"
+      prefWidth="600">
+    <padding>
+        <Insets bottom="50" left="50" right="50" top="50"/>
+    </padding>
     <children>
-      <HBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
-          <padding>
-              <Insets bottom="20" left="20" right="20" top="20" />
-          </padding>
-         <children>
-                <Label text="Enter your name: " HBox.hgrow="NEVER" />
-            <TextField id="nameTextField" fx:id="nameTextField" promptText="Use the same name if you've done this before." HBox.hgrow="ALWAYS" />
-         </children>
-      </HBox>
-        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+        <VBox alignment="BOTTOM_CENTER" spacing="20" VBox.vgrow="SOMETIMES">
             <children>
+                <Label text="Enter your name"
+                       HBox.hgrow="NEVER"
+                       style="-fx-font-size: 35"/>
+                <TextField fx:id="nameTextField"
+                           promptText="No need if you've done this before and have the excel."
+                           style="-fx-font-size: 20; -fx-font-family: Comic Sans MS">
+                </TextField>
+            </children>
+        </VBox>
+
+        <VBox alignment="TOP_CENTER" spacing="20" VBox.vgrow="SOMETIMES">
+            <children>
+                <JFXButton fx:id="firstTimeButton"
+                           buttonType="RAISED"
+                           style="-fx-font-size: 35"
+                           text="New User"/>
+                <JFXButton fx:id="nthTimeButton"
+                           buttonType="RAISED"
+                           style="-fx-font-size: 35"
+                           text="Existing User"/>
+
                 <!--
-                <JFXButton fx:id="firstTimeButton" buttonType="RAISED" mnemonicParsing="false" text="First time (this creates you a spreadsheet)" />
-                <JFXButton fx:id="nthTimeButton" buttonType="RAISED" layoutX="300.0" mnemonicParsing="false" text="I've done this before (supply the same spreadsheet)" />
+                <Button fx:id="firstTimeButton"
+                        style="-fx-font-size: 35"
+                        text="New User"/>
+                <Button fx:id="nthTimeButton"
+                        style="-fx-font-size: 35"
+                        text="Existing User"/>
                 -->
-                <Button fx:id="firstTimeButton" alignment="CENTER" mnemonicParsing="false" text="First time (This creates you a spreadsheet)">
-               <VBox.margin>
-                  <Insets bottom="25.0" top="25.0" />
-               </VBox.margin></Button>
-                <Button fx:id="nthTimeButton" layoutX="300.0" mnemonicParsing="false" text="I've done this before (Supply the same spreadsheet)">
-               <VBox.margin>
-                  <Insets bottom="25.0" top="25.0" />
-               </VBox.margin></Button>
 
             </children>
         </VBox>
     </children>
-</GridPane>
+</VBox>
