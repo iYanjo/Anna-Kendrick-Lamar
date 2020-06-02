@@ -16,6 +16,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
@@ -91,6 +92,22 @@ public class MatchupScreenController {
             }
         });
 
+        ImageView leftImageView = (ImageView) leftAlbumDisplay.lookup("#album_image");
+        leftImageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                recordLeftAlbumWin();
+            }
+        });
+
+        ImageView rightImageView = (ImageView) rightAlbumDisplay.lookup("#album_image");
+        rightImageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                recordRightAlbumWin();
+            }
+        });
+
         mPrimaryStage.getScene().setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
@@ -141,7 +158,7 @@ public class MatchupScreenController {
         if(Configs.style == Configs.Style.ANNA) {
             Media media = new Media(getClass().getResource("/pitch_perfect_audition.mp3").toExternalForm());
             mMediaPlayer = new MediaPlayer(media);
-            mMediaPlayer.setAutoPlay(true);
+//            mMediaPlayer.setAutoPlay(true);
             mMediaPlayer.setVolume(mVolume);
             mMediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
         }

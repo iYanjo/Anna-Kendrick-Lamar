@@ -7,7 +7,7 @@ public class Configs {
         NONE
     }
 
-    public final static Integer maxAlbums = null;
+    public final static Integer maxAlbums = 8;
     public final static Style style = Style.DARK;
 
     /**

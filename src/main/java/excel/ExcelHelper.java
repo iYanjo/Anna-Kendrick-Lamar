@@ -12,7 +12,6 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.jetbrains.annotations.Nullable;
 import ui.CSSHelper;
-import ui.ReadErrorAlert;
 
 import java.io.*;
 import java.util.*;
@@ -35,7 +34,8 @@ public class ExcelHelper {
     List<Matchup> matchupsList;
     private static int albumCount;
     private static int currentMatchupIndex;
-    private static int lastUnsavedResultIndex;
+    private static int earliestUnsavedResultIndex;
+    private static int latestUnsavedResultIndex;
     private static int rngSeed = 0;
     private static boolean hasUnsavedChanges = false;
 
@@ -90,7 +90,7 @@ public class ExcelHelper {
     }
 
     // return true if created successfully
-    public boolean createResultsSpreadsheet(String name) throws IOException {
+    public boolean createResultsSpreadsheetFile(String name) throws IOException {
         if(albums == null) {
             return false;
         }
@@ -130,7 +130,8 @@ public class ExcelHelper {
         }
 //        resultsSheet.getWorkbook().close();
         currentMatchupIndex = 0;
-        lastUnsavedResultIndex = 0;
+        earliestUnsavedResultIndex = 0;
+        latestUnsavedResultIndex = 0;
         return true;
     }
 
@@ -181,8 +182,8 @@ public class ExcelHelper {
         }
 
         matchupsList = createMatchupsList();
-        Workbook workbook = new XSSFWorkbook();
-        workbook.createSheet("albums_info");
+        XSSFWorkbook workbook = new XSSFWorkbook();
+        copyAlbumSheetToAnotherSheet(workbook.createSheet("albums_info"));
         resultsSheet = workbook.createSheet(name + "_albums_results");
 
         //header
@@ -219,6 +220,38 @@ public class ExcelHelper {
         // Resize all columns to fit the content size
         for(int i = 0; i < 5; i++) {
             metadataSheet.autoSizeColumn(i);
+        }
+    }
+
+    private void copyAlbumSheetToAnotherSheet(Sheet sheet) {
+        // not trivial, apparently https://stackoverflow.com/questions/848212/copying-excel-worksheets-in-poi
+        for(int i = 0; i < albumsSheet.getPhysicalNumberOfRows(); i++) {
+            Row r = albumsSheet.getRow(i);
+            Row rCopy = sheet.createRow(i);
+            for(int j = 0; j < r.getPhysicalNumberOfCells(); j++) {
+                Cell c = r.getCell(j);
+                Cell cCopy = rCopy.createCell(j);
+
+                CellType cellType = c.getCellType();
+                switch(cellType) {
+                    case STRING:
+                        cCopy.setCellValue(c.getStringCellValue());
+                        break;
+                    case NUMERIC:
+                        cCopy.setCellValue(c.getNumericCellValue());
+                        break;
+                    case FORMULA:
+                        cCopy.setCellValue("placeholder");
+                        //bug where it doesn't set formula when cell is initially blank
+                        cCopy.setCellFormula(c.getCellFormula());
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        for(int i = 0; i < 9; i++) {
+            sheet.autoSizeColumn(i);
         }
     }
 
@@ -268,7 +301,8 @@ public class ExcelHelper {
                         getIntFromCellSafe(row.getCell(4))));
                 if(getIntFromCellSafe(row.getCell(4)) != RESULT_EMPTY) {
                     currentMatchupIndex = i;
-                    lastUnsavedResultIndex = i;
+                    earliestUnsavedResultIndex = i;
+                    latestUnsavedResultIndex = i;
                 }
             }
         } catch (FileNotFoundException e) {
@@ -304,15 +338,18 @@ public class ExcelHelper {
             resultsSheet = matchupWorkbook.getSheetAt(1);
             metadataSheet = matchupWorkbook.getSheetAt(2);
             rngSeed = (int) metadataSheet.getRow(0).getCell(2).getNumericCellValue();
-            lastUnsavedResultIndex = (int) metadataSheet.getRow(0).getCell(4).getNumericCellValue();
-            currentMatchupIndex = lastUnsavedResultIndex;
+            final int currentMatchup = (int) metadataSheet.getRow(0).getCell(4).getNumericCellValue();
+            latestUnsavedResultIndex = currentMatchup;
+            earliestUnsavedResultIndex = currentMatchup;
+            currentMatchupIndex = currentMatchup;
+
 
             matchupsList = createMatchupsList();
             if(albumCount + 1 != resultsSheet.getPhysicalNumberOfRows()){
                 return false;
             }
 
-            for(int i = 0; i < lastUnsavedResultIndex; i++) {
+            for(int i = 0; i < currentMatchupIndex; i++) {
                 Matchup m = matchupsList.get(i);
                 Row r = resultsSheet.getRow(m.getAlbum1());
                 m.setResult((int) r.getCell(m.getAlbum2()).getNumericCellValue());
@@ -350,6 +387,12 @@ public class ExcelHelper {
     }
 
     public void setResult(int winningAlbumIndex) {
+        if(currentMatchupIndex < earliestUnsavedResultIndex) {
+            earliestUnsavedResultIndex = currentMatchupIndex;
+        } else if(currentMatchupIndex > latestUnsavedResultIndex) {
+            latestUnsavedResultIndex = currentMatchupIndex;
+        }
+
         matchupsList.get(currentMatchupIndex).setResult(winningAlbumIndex);
         currentMatchupIndex++;
         hasUnsavedChanges = true;
@@ -362,8 +405,7 @@ public class ExcelHelper {
 
 
     public void saveResults() {
-        //todo fix bug where saving results after going back doesn't touch the ones that've been answered past currentMatchupIndex
-        for(int i = lastUnsavedResultIndex; i < currentMatchupIndex; i++) {
+        for(int i = earliestUnsavedResultIndex; i <= latestUnsavedResultIndex; i++) {
             resultsSheet.getRow(i + NUM_HEADER_ROWS_IN_MATCHUPS).getCell(4).setCellValue(matchupsList.get(i).getResult());
         }
 
@@ -393,15 +435,17 @@ public class ExcelHelper {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        earliestUnsavedResultIndex = currentMatchupIndex;
+        latestUnsavedResultIndex = currentMatchupIndex;
         hasUnsavedChanges = false;
     }
 
     public void saveCompactResults() {
-        for(int i = lastUnsavedResultIndex; i < currentMatchupIndex; i++) {
+        for(int i = earliestUnsavedResultIndex; i <= latestUnsavedResultIndex; i++) {
             Matchup m = matchupsList.get(i);
             resultsSheet.getRow(m.getAlbum1()).getCell(m.getAlbum2()).setCellValue(m.getResult());
         }
-        metadataSheet.getRow(0).getCell(4).setCellValue(currentMatchupIndex);
+        metadataSheet.getRow(0).getCell(4).setCellValue(latestUnsavedResultIndex + 1);
 
         try {
             if(resultsFile == null) {
@@ -429,6 +473,8 @@ public class ExcelHelper {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        earliestUnsavedResultIndex = currentMatchupIndex;
+        latestUnsavedResultIndex = currentMatchupIndex;
         hasUnsavedChanges = false;
     }
 

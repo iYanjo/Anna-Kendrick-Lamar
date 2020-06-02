@@ -4,7 +4,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import java.awt.Font?>
 <?import com.jfoenix.controls.JFXButton?>
 <VBox alignment="center"
       xmlns="http://javafx.com/javafx/10.0.2-internal"

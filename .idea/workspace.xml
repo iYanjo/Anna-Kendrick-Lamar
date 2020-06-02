@@ -182,6 +182,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -233,50 +234,50 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1588669796812" />
-    <state width="2517" height="492" key="GridCell.Tab.0.bottom" timestamp="1591014240644">
+    <state width="2517" height="284" key="GridCell.Tab.0.bottom" timestamp="1591061482715">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2517" height="425" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1588670425468" />
-    <state width="2517" height="492" key="GridCell.Tab.0.bottom/2560.345.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591014240644" />
+    <state width="2517" height="284" key="GridCell.Tab.0.bottom/2560.345.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591061482715" />
     <state width="2517" height="401" key="GridCell.Tab.0.bottom/2560.345.1920.1040/0.0.2560.1400@2560.345.1920.1040" timestamp="1590993581208" />
-    <state width="2517" height="492" key="GridCell.Tab.0.center" timestamp="1591014240644">
+    <state width="2517" height="284" key="GridCell.Tab.0.center" timestamp="1591061482715">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2517" height="425" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1588670425468" />
-    <state width="2517" height="492" key="GridCell.Tab.0.center/2560.345.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591014240644" />
+    <state width="2517" height="284" key="GridCell.Tab.0.center/2560.345.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591061482715" />
     <state width="2517" height="401" key="GridCell.Tab.0.center/2560.345.1920.1040/0.0.2560.1400@2560.345.1920.1040" timestamp="1590993581208" />
-    <state width="2517" height="492" key="GridCell.Tab.0.left" timestamp="1591014240644">
+    <state width="2517" height="284" key="GridCell.Tab.0.left" timestamp="1591061482715">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2517" height="425" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1588670425468" />
-    <state width="2517" height="492" key="GridCell.Tab.0.left/2560.345.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591014240644" />
+    <state width="2517" height="284" key="GridCell.Tab.0.left/2560.345.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591061482715" />
     <state width="2517" height="401" key="GridCell.Tab.0.left/2560.345.1920.1040/0.0.2560.1400@2560.345.1920.1040" timestamp="1590993581208" />
-    <state width="2517" height="492" key="GridCell.Tab.0.right" timestamp="1591014240644">
+    <state width="2517" height="284" key="GridCell.Tab.0.right" timestamp="1591061482715">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2517" height="425" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588670425468" />
-    <state width="2517" height="492" key="GridCell.Tab.0.right/2560.345.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591014240644" />
+    <state width="2517" height="284" key="GridCell.Tab.0.right/2560.345.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591061482715" />
     <state width="2517" height="401" key="GridCell.Tab.0.right/2560.345.1920.1040/0.0.2560.1400@2560.345.1920.1040" timestamp="1590993581208" />
-    <state width="2517" height="492" key="GridCell.Tab.1.bottom" timestamp="1591014240644">
+    <state width="2517" height="408" key="GridCell.Tab.1.bottom" timestamp="1591061462122">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2517" height="492" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1588326950448" />
-    <state width="2517" height="492" key="GridCell.Tab.1.bottom/2560.345.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591014240644" />
-    <state width="2517" height="492" key="GridCell.Tab.1.center" timestamp="1591014240644">
+    <state width="2517" height="408" key="GridCell.Tab.1.bottom/2560.345.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591061462122" />
+    <state width="2517" height="408" key="GridCell.Tab.1.center" timestamp="1591061462122">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2517" height="492" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1588326950448" />
-    <state width="2517" height="492" key="GridCell.Tab.1.center/2560.345.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591014240644" />
-    <state width="2517" height="492" key="GridCell.Tab.1.left" timestamp="1591014240644">
+    <state width="2517" height="408" key="GridCell.Tab.1.center/2560.345.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591061462122" />
+    <state width="2517" height="408" key="GridCell.Tab.1.left" timestamp="1591061462122">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2517" height="492" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1588326950448" />
-    <state width="2517" height="492" key="GridCell.Tab.1.left/2560.345.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591014240644" />
-    <state width="2517" height="492" key="GridCell.Tab.1.right" timestamp="1591014240644">
+    <state width="2517" height="408" key="GridCell.Tab.1.left/2560.345.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591061462122" />
+    <state width="2517" height="408" key="GridCell.Tab.1.right" timestamp="1591061462122">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2517" height="492" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588326950448" />
-    <state width="2517" height="492" key="GridCell.Tab.1.right/2560.345.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591014240644" />
+    <state width="2517" height="408" key="GridCell.Tab.1.right/2560.345.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591061462122" />
     <state x="760" y="274" key="SettingsEditor" timestamp="1591004836203">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -294,11 +295,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="821" y="429" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/2560.345.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591013480736" />
-    <state x="976" y="298" width="607" height="804" key="find.popup" timestamp="1591009857500">
+    <state x="976" y="298" width="607" height="804" key="find.popup" timestamp="1591060141066">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="976" y="298" width="607" height="804" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1588668811113" />
-    <state x="976" y="298" width="607" height="804" key="find.popup/2560.345.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591009857500" />
+    <state x="976" y="298" width="607" height="804" key="find.popup/2560.345.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591060141066" />
     <state x="936" y="330" width="672" height="677" key="run.anything.popup" timestamp="1588669732649">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -314,13 +315,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ui/MatchupScreenController.java</url>
-          <line>203</line>
-          <option name="timeStamp" value="5" />
+          <line>158</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ui/MatchupScreenController.java</url>
-          <line>141</line>
-          <option name="timeStamp" value="7" />
+          <url>file://$PROJECT_DIR$/src/main/java/excel/ExcelHelper.java</url>
+          <line>443</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

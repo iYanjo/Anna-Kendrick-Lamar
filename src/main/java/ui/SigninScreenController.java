@@ -1,6 +1,5 @@
 package ui;
 
-import data.Configs;
 import data.Constants;
 import excel.ExcelHelper;
 import javafx.event.ActionEvent;
@@ -11,7 +10,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
@@ -117,7 +115,7 @@ public class SigninScreenController {
     // return true if created successfully
     private boolean createMatchupsSpreadsheet(String name) {
         try {
-            return excelHelper.createResultsSpreadsheet(name);
+            return excelHelper.createResultsSpreadsheetFile(name);
         } catch (IOException e) {
             e.printStackTrace();
             ReadErrorAlert readErrorAlert = new ReadErrorAlert();
