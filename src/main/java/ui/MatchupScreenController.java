@@ -145,11 +145,7 @@ public class MatchupScreenController {
         saveToolbarButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if (Constants.USE_COMPACT_EXCEL) {
-                    mExcelHelper.saveCompactResults();
-                } else {
-                    mExcelHelper.saveResults();
-                }
+                mExcelHelper.saveCompactResults();
             }
         });
 

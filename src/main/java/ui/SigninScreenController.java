@@ -72,9 +72,7 @@ public class SigninScreenController {
                         new FileChooser.ExtensionFilter("Choose the Excel from before", "*.xlsx"));
                 File spreadsheetFile = fileChooser.showOpenDialog(mPrimaryStage);
 
-                if (Constants.USE_COMPACT_EXCEL ? excelHelper.getCompactResultsSpreadsheet(spreadsheetFile) :
-                        excelHelper.getResultsSpreadsheet(
-                                spreadsheetFile)) {
+                if (excelHelper.getCompactResultsSpreadsheet(spreadsheetFile)) {
                     setupMatchupScreen();
                 } else {
                     Alert alert = new Alert(Alert.AlertType.ERROR);

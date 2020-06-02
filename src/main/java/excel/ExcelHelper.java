@@ -85,21 +85,13 @@ public class ExcelHelper {
         return cell.getCellType().equals(STRING) ? cell.getStringCellValue() : Double.toString(cell.getNumericCellValue());
     }
 
-    private int getIntFromCellSafe(Cell cell) {
-        return (int) cell.getNumericCellValue();
-    }
-
     // return true if created successfully
     public boolean createResultsSpreadsheetFile(String name) throws IOException {
         if(albums == null) {
             return false;
         }
 
-        if(Constants.USE_COMPACT_EXCEL) {
-            maybeCreateCompactResultsSheet(name);
-        } else {
-            maybeCreateResultsSheet(name);
-        }
+        maybeCreateCompactResultsSheet(name);
 
         try
         {
@@ -133,47 +125,6 @@ public class ExcelHelper {
         earliestUnsavedResultIndex = 0;
         latestUnsavedResultIndex = 0;
         return true;
-    }
-
-    private void maybeCreateResultsSheet(String name) {
-        if(matchupsList != null && resultsSheet != null) {
-            return;
-        }
-
-        matchupsList = createMatchupsList();
-        Workbook workbook = new XSSFWorkbook();
-        workbook.createSheet("albums_info");
-        resultsSheet = workbook.createSheet(name + "_albums_results");
-
-        //header
-        Font headerFont = workbook.createFont();
-        headerFont.setBold(true);
-        headerFont.setFontHeightInPoints((short) 14);
-        CellStyle headerCellStyle = workbook.createCellStyle();
-        headerCellStyle.setFont(headerFont);
-
-        Row headerRow = resultsSheet.createRow(0);
-        headerRow.setRowStyle(headerCellStyle);
-        headerRow.createCell(0).setCellValue("Album 1 #");
-        headerRow.createCell(1).setCellValue("Album 1 Name + Artist");
-        headerRow.createCell(2).setCellValue("Album 2 #");
-        headerRow.createCell(3).setCellValue("Album 2 Name + Artist");
-        headerRow.createCell(4).setCellValue("Result (-1 is empty, -2 is skip)");
-
-        //content
-        for(int i = 0; i < matchupsList.size(); i++) {
-            Row row = resultsSheet.createRow(i + NUM_HEADER_ROWS_IN_MATCHUPS);
-            Matchup matchup = matchupsList.get(i);
-            row.createCell(0).setCellValue(matchup.getAlbum1());
-            row.createCell(1).setCellValue(matchup.getAlbum1String());
-            row.createCell(2).setCellValue(matchup.getAlbum2());
-            row.createCell(3).setCellValue(matchup.getAlbum2String());
-            row.createCell(4).setCellValue(RESULT_EMPTY);
-        }
-        // Resize all columns to fit the content size
-        for(int i = 0; i < 5; i++) {
-            resultsSheet.autoSizeColumn(i);
-        }
     }
 
     private void maybeCreateCompactResultsSheet(String name) {
@@ -274,50 +225,6 @@ public class ExcelHelper {
         return matchupsList;
     }
 
-    public boolean getResultsSpreadsheet(@Nullable File file) {
-        if(file == null || !file.isFile()) {
-            return false;
-        }
-
-        try {
-            resultsFile = file;
-            FileInputStream excelFile = new FileInputStream(file);
-            Workbook matchupWorkbook = new XSSFWorkbook(excelFile);
-            resultsSheet = matchupWorkbook.getSheetAt(1);
-
-            final int matchupCount = (albumCount * (albumCount-1))/2;
-            matchupsList = new ArrayList<>(matchupCount);
-            if(matchupCount + NUM_HEADER_ROWS_IN_MATCHUPS != resultsSheet.getPhysicalNumberOfRows()){
-                return false;
-            }
-
-            for(int i = NUM_HEADER_ROWS_IN_MATCHUPS; i < matchupCount + NUM_HEADER_ROWS_IN_MATCHUPS; i++ ){
-                Row row = resultsSheet.getRow(i);
-                matchupsList.add(new Matchup(
-                        getIntFromCellSafe(row.getCell(0)),
-                        getStringFromCellSafe(row.getCell(1)),
-                        getIntFromCellSafe(row.getCell(2)),
-                        getStringFromCellSafe(row.getCell(3)),
-                        getIntFromCellSafe(row.getCell(4))));
-                if(getIntFromCellSafe(row.getCell(4)) != RESULT_EMPTY) {
-                    currentMatchupIndex = i;
-                    earliestUnsavedResultIndex = i;
-                    latestUnsavedResultIndex = i;
-                }
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            return false;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        } catch (EmptyFileException e) {
-            e.printStackTrace();
-            return false;
-        }
-        return true;
-    }
-
     public boolean getCompactResultsSpreadsheet(@Nullable File file) {
         if(file == null || !file.isFile()) {
             return false;
@@ -403,42 +310,6 @@ public class ExcelHelper {
         hasUnsavedChanges = true;
     }
 
-
-    public void saveResults() {
-        for(int i = earliestUnsavedResultIndex; i <= latestUnsavedResultIndex; i++) {
-            resultsSheet.getRow(i + NUM_HEADER_ROWS_IN_MATCHUPS).getCell(4).setCellValue(matchupsList.get(i).getResult());
-        }
-
-        try {
-            if(resultsFile == null) {
-                FileChooser fileChooser = new FileChooser();
-                fileChooser.setInitialFileName("(your_name)_albums_results.xlsx");
-                fileChooser.setTitle("Weirdly, we lost the original excel. Keep the name [your name]_albums_results");
-                fileChooser.getExtensionFilters().addAll(
-                        new FileChooser.ExtensionFilter("Excel Sheet", "*.xlsx"));
-
-                resultsFile = fileChooser.showSaveDialog(null);
-            }
-
-            if(resultsFile != null) {
-                FileOutputStream outputStream = new FileOutputStream(resultsFile);
-                resultsSheet.getWorkbook().write(outputStream);
-            } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error while saving results");
-                alert.setContentText("Please save to a valid file");
-                CSSHelper.maybeApplyCSS(alert.getDialogPane());
-                alert.showAndWait();
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        earliestUnsavedResultIndex = currentMatchupIndex;
-        latestUnsavedResultIndex = currentMatchupIndex;
-        hasUnsavedChanges = false;
-    }
 
     public void saveCompactResults() {
         for(int i = earliestUnsavedResultIndex; i <= latestUnsavedResultIndex; i++) {
