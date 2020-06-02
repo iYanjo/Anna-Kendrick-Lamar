@@ -2,10 +2,12 @@ data\Configs$Style.class
 ui\MatchupScreenController$4.class
 ui\MatchupScreenController.class
 ui\SigninScreenController$1.class
+excel\ExcelHelper$1.class
 ui\MatchupScreenController$1.class
 ui\Main.class
 data\Constants.class
 data\AlbumArtworkMap.class
+ui\HistoryPopupController$Person.class
 data\Configs.class
 data\Matchup.class
 ui\SigninScreenController$2.class
@@ -15,6 +17,10 @@ ui\MatchupScreenController$3.class
 ui\SigninScreenController.class
 ui\ReadErrorAlert.class
 ui\MatchupScreenController$2.class
+ui\HistoryPopupController.class
+ui\CSSHelper.class
 ui\MatchupScreenController$6.class
 data\Album.class
+ui\MatchupScreenController$9.class
 ui\MatchupScreenController$7.class
+ui\MatchupScreenController$8.class

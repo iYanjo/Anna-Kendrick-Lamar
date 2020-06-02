@@ -27,14 +27,21 @@ import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 import java.util.Optional;
+import java.util.Random;
 
 public class MatchupScreenController {
 
     private static final String ARTWORK_DIR = ".\\src\\res\\Album Artwork\\";
     private static final String ARTWORK_DEFAULT_PATH = ".\\src\\res\\nan.png";
     private static final String CLASS_ARTWORK_DEFAULT_PATH = "../res/nan.png";
-    private static final String CLASS_ARTWORK_DIR = "../res/Album Artwork/";
-    private static final String JAR_CLASS_ARTWORK_DIR = "/Album Artwork/";
+    private static final String CLASS_ARTWORK_DIR = "/Album Artwork/";
+    private static final String CLASS_ANNA_ARTWORK_DIR = "/Anna/";
+
+    private static final String[] ANNA_ARTWORK_FILENAMES = {
+            "anna bae 1.jpg",
+            "anna bae 2.jpg",
+            "anna bae 3.jpg",
+            };
 
     private static Matchup mCurrentMatchup;
 
@@ -54,8 +61,12 @@ public class MatchupScreenController {
     private Button saveToolbarButton;
 
     //anna
-    private float mVolume = 0;
+    private double mVolume = 0.5;
     private MediaPlayer mMediaPlayer;
+    private double mGanonOpacity = 0.1;
+    private HBox mGanonHbox;
+    private boolean mIsAnnaMatchup = false;
+    private Matchup mCachedMatchup;
 
 
     public MatchupScreenController(final Stage primaryStage, Parent root, Scene scene, ExcelHelper excelHelper) {
@@ -150,50 +161,113 @@ public class MatchupScreenController {
         });
 
         loadNextMatchup();
+        maybeInitAnnaStuff(root);
+    }
 
-        if(Configs.style == Configs.Style.ANNA) {
-            Media media = new Media(getClass().getResource("/pitch_perfect_audition.mp3").toExternalForm());
-            mMediaPlayer = new MediaPlayer(media);
-//            mMediaPlayer.setAutoPlay(true);
-            mMediaPlayer.setVolume(mVolume);
-            mMediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+    private void maybeInitAnnaStuff(Parent root) {
+        if (Configs.style != Configs.Style.ANNA) {
+            return;
         }
+
+        //music
+        Media media = new Media(getClass().getResource("/pitch_perfect_audition.mp3").toExternalForm());
+        mMediaPlayer = new MediaPlayer(media);
+        mMediaPlayer.setAutoPlay(true);
+        mMediaPlayer.setVolume(mVolume);
+        mMediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+
+        //ganons
+        Image image = new Image(getClass().getResourceAsStream("/ganon_icon.png"));
+        mGanonHbox = (HBox) root.lookup("#sixGanons");
+        mGanonHbox.setVisible(true);
+        mGanonHbox.setOpacity(mGanonOpacity);
+        ((ImageView) mGanonHbox.lookup("#ganon1")).setImage(image);
+        ((ImageView) mGanonHbox.lookup("#ganon2")).setImage(image);
+        ((ImageView) mGanonHbox.lookup("#ganon3")).setImage(image);
+        ((ImageView) mGanonHbox.lookup("#ganon4")).setImage(image);
+        ((ImageView) mGanonHbox.lookup("#ganon5")).setImage(image);
+        ((ImageView) mGanonHbox.lookup("#ganon6")).setImage(image);
     }
 
     private synchronized void recordLeftAlbumWin() {
+        if (mIsAnnaMatchup) {
+            choseAnnaDialog();
+            loadNextMatchup();
+            return;
+        }
         mExcelHelper.setResult(mCurrentMatchup.getAlbum1());
         loadNextMatchup();
     }
 
     private synchronized void recordRightAlbumWin() {
+        if (mIsAnnaMatchup) {
+            chooseAnnaDialog();
+            return;
+        }
         mExcelHelper.setResult(mCurrentMatchup.getAlbum2());
         loadNextMatchup();
     }
 
     private synchronized void recordAlbumSkip() {
+        if (mIsAnnaMatchup) {
+            chooseAnnaDialog();
+            return;
+        }
         mExcelHelper.setResult(Constants.RESULT_SKIPPED);
         loadNextMatchup();
     }
 
-    private synchronized void loadNextMatchup() {
-        mCurrentMatchup = mExcelHelper.getNextMatchup();
-        if (mCurrentMatchup == null) {
-            mPrimaryStage.getScene().setOnKeyPressed(null);
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/victory_screen.fxml"));
-            fxmlLoader.setController(this);
-            Parent root = null;
-            try {
-                root = fxmlLoader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+    private void chooseAnnaDialog() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Choose Anna");
+        alert.setContentText("You have to");
+        CSSHelper.maybeApplyCSS(alert.getDialogPane());
+        alert.showAndWait();
+    }
 
-            mPrimaryStage.setScene(new Scene(root, 1000, 1000));
-            //todo: it's over
+    private void choseAnnaDialog() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(":)");
+        alert.setContentText(":))))))))");
+        CSSHelper.maybeApplyCSS(alert.getDialogPane());
+        alert.showAndWait();
+    }
+
+    private synchronized void loadNextMatchup() {
+        if (mIsAnnaMatchup) {
+            mCurrentMatchup = mCachedMatchup;
+        } else {
+            mCurrentMatchup = mExcelHelper.getNextMatchup();
+        }
+        if (mCurrentMatchup == null) {
+            loadEndingScreen();
             return;
         }
-        setupCurrentMatchup();
+
+        if (shouldDoAnnaMatchup()) {
+            mCachedMatchup = mCurrentMatchup;
+            mIsAnnaMatchup = true;
+            setupAnnaMatchup(getRandomAnnaAlbumIndex());
+        } else {
+            mIsAnnaMatchup = false;
+            setupCurrentMatchup();
+        }
         maybeDoAnnaStuff();
+    }
+
+    private void loadEndingScreen() {
+        mPrimaryStage.getScene().setOnKeyPressed(null);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/victory_screen.fxml"));
+        fxmlLoader.setController(this);
+        Parent root = null;
+        try {
+            root = fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        mExcelHelper.saveCompactResults();
+        mPrimaryStage.setScene(new Scene(root, 1000, 1000));
+        //todo: it's over
     }
 
     private synchronized void loadPrevMatchup() {
@@ -212,18 +286,55 @@ public class MatchupScreenController {
         maybeDoAnnaStuff();
     }
 
+    private boolean shouldDoAnnaMatchup() {
+        if (mIsAnnaMatchup || Configs.style != Configs.Style.ANNA) {
+            return false;
+        }
+
+        Random r = new Random();
+        return r.nextFloat() < 0.5;
+    }
+
+    private int getRandomAnnaAlbumIndex() {
+        Random r = new Random();
+        return r.nextInt(3);
+    }
+
     private synchronized void maybeDoAnnaStuff() {
-        //todo expand dong
-        if(Configs.style != Configs.Style.ANNA) {
+        if (Configs.style != Configs.Style.ANNA) {
             return;
         }
 
-        if(mMediaPlayer != null && mVolume <= 1) {
-            mVolume += 0.1;
+        if (mMediaPlayer != null && mVolume < 1) {
+            mVolume += 0.05;
             mMediaPlayer.setVolume(mVolume);
         }
 
+        if (mGanonHbox != null && mGanonOpacity < 1) {
+            double diff = 1 - mGanonOpacity;
+            mGanonOpacity = 1 - Math.pow(diff, 1.2);
+            mGanonHbox.setOpacity(mGanonOpacity);
+        }
+    }
 
+    private synchronized void setupAnnaMatchup(int albumIndex) {
+        setupAlbumDisplayImage(leftAlbumDisplay, new Image(getClass().getResourceAsStream(CLASS_ANNA_ARTWORK_DIR +
+                                                                                          ANNA_ARTWORK_FILENAMES[albumIndex])));
+        setupAlbumDisplayInfo(leftAlbumDisplay, Constants.PITCH_PERFECT_ALBUMS[albumIndex]);
+        setupAlbumDisplay(rightAlbumDisplay, 0);
+
+        albumLeftChoiceLabel.setText("");
+        albumSkipChoiceLabel.setText("");
+        albumRightChoiceLabel.setText("");
+
+        if (mCurrentMatchup.getResult() == Constants.RESULT_SKIPPED) {
+            albumSkipChoiceLabel.setText("This is your current choice");
+        } else if (mCurrentMatchup.getResult() == mCurrentMatchup.getAlbum1()) {
+            albumLeftChoiceLabel.setText("This is your current choice");
+        }
+        if (mCurrentMatchup.getResult() == mCurrentMatchup.getAlbum2()) {
+            albumRightChoiceLabel.setText("This is your current choice");
+        }
     }
 
     private synchronized void setupCurrentMatchup() {
@@ -246,12 +357,20 @@ public class MatchupScreenController {
 
     private void setupAlbumDisplay(VBox albumDisplay, int albumIndex) {
         // image
-        ImageView imageView = (ImageView) albumDisplay.lookup("#album_image");
-        final String albumFileString = AlbumArtworkMap.ALBUM_ARTWORK_FILENAMES[albumIndex];
-        imageView.setImage(new Image(getClass().getResourceAsStream(JAR_CLASS_ARTWORK_DIR + albumFileString)));
+        setupAlbumDisplayImage(albumDisplay, new Image(getClass().getResourceAsStream(CLASS_ARTWORK_DIR +
+                                                                                      AlbumArtworkMap.ALBUM_ARTWORK_FILENAMES[albumIndex])));
 
         // text
         Album album = mExcelHelper.getAlbum(albumIndex);
+        setupAlbumDisplayInfo(albumDisplay, album);
+    }
+
+    private void setupAlbumDisplayImage(VBox albumDisplay, Image image) {
+        ImageView imageView = (ImageView) albumDisplay.lookup("#album_image");
+        imageView.setImage(image);
+    }
+
+    private void setupAlbumDisplayInfo(VBox albumDisplay, Album album) {
         Label albumTitle = (Label) albumDisplay.lookup("#album_title");
         Label albumArtist = (Label) albumDisplay.lookup("#album_artist");
         Label albumTrack = (Label) albumDisplay.lookup("#album_track");
@@ -269,7 +388,7 @@ public class MatchupScreenController {
     }
 
     private void setupAlbumScoreForDisplay(Node root, String identifier, String scoreTypeString,
-            String scoreValueString) {
+                                           String scoreValueString) {
         VBox albumScoreNode = (VBox) root.lookup(identifier);
         Label scoreType = (Label) albumScoreNode.lookup("#score_type");
         Label scoreValue = (Label) albumScoreNode.lookup("#score_value");
@@ -307,8 +426,9 @@ public class MatchupScreenController {
         Optional<ButtonType> res = alert.showAndWait();
 
         if (res.isPresent()) {
-            if (res.get().equals(ButtonType.CANCEL))
+            if (res.get().equals(ButtonType.CANCEL)) {
                 event.consume();
+            }
         }
     }
 
@@ -334,6 +454,14 @@ public class MatchupScreenController {
         helpStage.getIcons().add(new Image(getClass().getResourceAsStream("/ganon_icon.png")));
 
         Scene dialogScene = new Scene(root, 600, 600);
+
+        //cold as fuck
+        ImageView background = (ImageView) dialogScene.lookup("#background");
+        background.setImage(new Image(getClass().getResourceAsStream("/conor_icon.png")));
+        background.setOpacity(0.4);
+        background.fitWidthProperty().bind(helpStage.widthProperty());
+        background.fitHeightProperty().bind(helpStage.heightProperty());
+
         CSSHelper.maybeApplyCSS(dialogScene);
         helpStage.setScene(dialogScene);
         helpStage.show();
@@ -361,7 +489,15 @@ public class MatchupScreenController {
         helpStage.getIcons().add(new Image(getClass().getResourceAsStream("/conor_icon.png")));
 
         Scene dialogScene = new Scene(root, 600, 600);
+
+        //cold as fuck
+        ImageView background = (ImageView) dialogScene.lookup("#background");
+        background.setImage(new Image(getClass().getResourceAsStream("/conor_icon.png")));
+        background.setOpacity(0.4);
+        background.fitWidthProperty().bind(helpStage.widthProperty());
+        background.fitHeightProperty().bind(helpStage.heightProperty());
         CSSHelper.maybeApplyCSS(dialogScene);
+
         helpStage.setScene(dialogScene);
         helpStage.show();
     }

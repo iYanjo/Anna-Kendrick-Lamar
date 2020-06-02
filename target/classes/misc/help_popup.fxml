@@ -4,19 +4,24 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal">
-    <VBox prefHeight="600.0" prefWidth="600.0" spacing="10" alignment="CENTER_LEFT">
-        <padding>
-            <Insets bottom="50" left="50" right="50" top="50"/>
-        </padding>
+<?import javafx.scene.image.ImageView?>
+<StackPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal">
+    <children>
 
-        <Label text="Left/right arrows to which album wins each matchup"/>
-        <Label text="Down arrow to skip matchup"/>
-        <Label text="Up arrow to go to previous matchup"/>
-        <Label text="Don't forget to save before exiting"/>
-        <Label text=""/>
-        <Label text=""/>
-        <Label text="Made by John Yan"/>
-        <Label text="With love, for Anna"/>
-    </VBox>
-</AnchorPane>
+        <VBox prefHeight="600.0" prefWidth="600.0" spacing="10" alignment="CENTER_LEFT">
+            <padding>
+                <Insets bottom="50" left="50" right="50" top="50"/>
+            </padding>
+
+            <Label text="Left/right arrows to which album wins each matchup"/>
+            <Label text="Down arrow to skip matchup"/>
+            <Label text="Up arrow to go to previous matchup"/>
+            <Label text="Don't forget to save before exiting"/>
+            <Label text=""/>
+            <Label text=""/>
+            <Label text="Made by John Yan"/>
+            <Label text="With love, for Anna"/>
+        </VBox>
+        <ImageView id="background"/>
+    </children>
+</StackPane>

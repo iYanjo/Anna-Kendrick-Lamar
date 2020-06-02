@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 public class CSSHelper {
 
-    private final static String YUGLY_FONT_NAME = "/css/yuglyfont.TTF";
+    private final static String YUGLY_FONT_NAME = "/yuglyfont.TTF";
     private final static String DARK_THEME_NAME = "/css/darktheme.css";
     private final static String ANNA_THEME_NAME = "/css/anna.css";
 

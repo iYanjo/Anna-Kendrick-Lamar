@@ -6,53 +6,95 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ToolBar?>
 <?import com.jfoenix.controls.JFXButton?>
-<VBox maxHeight="-Infinity"
-      maxWidth="-Infinity"
-      minHeight="-Infinity"
-      minWidth="-Infinity"
-      prefHeight="1000.0"
-      prefWidth="1000.0"
-      xmlns="http://javafx.com/javafx/10.0.2-internal"
-      xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.image.ImageView?>
+<StackPane
+        xmlns="http://javafx.com/javafx/10.0.2-internal"
+        xmlns:fx="http://javafx.com/fxml/1"
+        alignment="CENTER"
+>
     <children>
-        <ToolBar prefHeight="40.0" prefWidth="1000.0" VBox.vgrow="NEVER">
-            <items>
-                <Pane HBox.hgrow="ALWAYS"/>
-                <!--
-                <Button fx:id="helpToolbarButton" text="Show Help"/>
-                <Button fx:id="historyToolbarButton" text="See History"/>
-                <Button fx:id="saveToolbarButton" text="Save Changes"/>
-                -->
-                <JFXButton id="helpToolbarButton"
-                           buttonType="RAISED"
-                           text="Show Help"
-                           style="-fx-font-size: 15"/>
-                <JFXButton id="historyToolbarButton"
-                           buttonType="RAISED"
-                           text="See History"
-                           style="-fx-font-size: 15"/>
-                <JFXButton id="saveToolbarButton"
-                           buttonType="RAISED"
-                           text="Save Changes"
-                           style="-fx-font-size: 15"/>
-            </items>
-        </ToolBar>
-        <HBox prefHeight="740.0" prefWidth="1000.0" VBox.vgrow="ALWAYS">
+        <VBox prefHeight="1000.0"
+              prefWidth="1000.0"
+        >
             <children>
-                <fx:include fx:id="leftAlbumDisplay" source="album_matchup_display.fxml"/>
-                <fx:include fx:id="rightAlbumDisplay" source="album_matchup_display.fxml"/>
+                <ToolBar prefHeight="40.0" prefWidth="1000.0" VBox.vgrow="NEVER">
+                    <items>
+                        <Pane HBox.hgrow="ALWAYS"/>
+                        <!--
+                        <Button fx:id="helpToolbarButton" text="Show Help"/>
+                        <Button fx:id="historyToolbarButton" text="See History"/>
+                        <Button fx:id="saveToolbarButton" text="Save Changes"/>
+                        -->
+                        <JFXButton id="helpToolbarButton"
+                                   buttonType="RAISED"
+                                   text="Show Help"
+                                   style="-fx-font-size: 15"/>
+                        <JFXButton id="historyToolbarButton"
+                                   buttonType="RAISED"
+                                   text="See History"
+                                   style="-fx-font-size: 15"/>
+                        <JFXButton id="saveToolbarButton"
+                                   buttonType="RAISED"
+                                   text="Save Changes"
+                                   style="-fx-font-size: 15"/>
+                    </items>
+                </ToolBar>
+                <HBox prefHeight="740.0" prefWidth="1000.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <fx:include fx:id="leftAlbumDisplay" source="album_matchup_display.fxml"/>
+                        <fx:include fx:id="rightAlbumDisplay" source="album_matchup_display.fxml"/>
+                    </children>
+                </HBox>
+                <HBox prefHeight="80.0" prefWidth="1000.0" VBox.vgrow="SOMETIMES">
+                    <padding>
+                        <Insets left="50" right="50"/>
+                    </padding>
+                    <children>
+                        <fx:include fx:id="leftAlbumChoice" source="album_left_choice_button.fxml"/>
+                        <fx:include fx:id="skipAlbumChoice" source="album_skip_choice_button.fxml"/>
+                        <fx:include fx:id="rightAlbumChoice" source="album_right_choice_button.fxml"/>
+                    </children>
+                </HBox>
+                <Pane prefHeight="80.0" prefWidth="1000.0" VBox.vgrow="NEVER"/>
+            </children>
+        </VBox>
+
+        <HBox fx:id="sixGanons"
+              prefHeight="100.0"
+              prefWidth="1000.0"
+              visible="false"
+              spacing="50"
+              alignment="CENTER"
+              mouseTransparent="true"
+        >
+            <children>
+                <ImageView
+                        fx:id="ganon1"
+                        fitHeight="100"
+                        fitWidth="100"/>
+                <ImageView
+                        fx:id="ganon2"
+                        fitHeight="100"
+                        fitWidth="100"/>
+                <ImageView
+                        fx:id="ganon3"
+                        fitHeight="100"
+                        fitWidth="100"/>
+                <ImageView
+                        fx:id="ganon4"
+                        fitHeight="100"
+                        fitWidth="100"/>
+                <ImageView
+                        fx:id="ganon5"
+                        fitHeight="100"
+                        fitWidth="100"/>
+                <ImageView
+                        fx:id="ganon6"
+                        fitHeight="100"
+                        fitWidth="100"/>
+
             </children>
         </HBox>
-        <HBox prefHeight="80.0" prefWidth="1000.0" VBox.vgrow="SOMETIMES">
-            <padding>
-                <Insets left="50" right="50"/>
-            </padding>
-            <children>
-                <fx:include fx:id="leftAlbumChoice" source="album_left_choice_button.fxml"/>
-                <fx:include fx:id="skipAlbumChoice" source="album_skip_choice_button.fxml"/>
-                <fx:include fx:id="rightAlbumChoice" source="album_right_choice_button.fxml"/>
-            </children>
-        </HBox>
-        <Pane prefHeight="80.0" prefWidth="1000.0" VBox.vgrow="NEVER"/>
+
     </children>
-</VBox>
+</StackPane>
